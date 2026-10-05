@@ -8,3 +8,6 @@ __pycache__/
 *.pem
 *.key
 *-token.txt
+
+# el ZIP para Hostinger se arma con herramientas/preparar-hostinger.py
+*.zip

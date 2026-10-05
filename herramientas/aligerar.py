@@ -18,7 +18,7 @@ from pathlib import Path
 
 from fontTools import subset
 
-WEB = Path(__file__).resolve().parent
+WEB = Path(__file__).resolve().parent.parent / "sitio"   # lo que se publica
 PAGINAS = sorted(p.name for p in WEB.glob("*.html"))
 LATIN = "U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2010-2027,U+2030-203A,U+2044,U+20AC,U+2122,U+2190-2199,U+2212"
 FUENTES = ["SpaceGrotesk-700", "SpaceGrotesk-500", "Inter-400", "Inter-500", "Inter-600", "InstrumentSerif-Italic"]

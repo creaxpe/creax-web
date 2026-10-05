@@ -29,7 +29,7 @@ const EJEMPLOS = ["reposteria", "clinica", "gimnasio"];
       await p.evaluate(() => document.fonts.ready);
       await p.waitForTimeout(500);
       const nombre = completa ? `boceto-${ej}-completo.jpg` : `maqueta-${ej}${sufijo}.jpg`;
-      await p.screenshot({ path: `assets/${nombre}`, fullPage: completa, type: "jpeg", quality: completa ? 74 : 84 });
+      await p.screenshot({ path: require("path").join(__dirname, "..", "sitio", "assets", nombre), fullPage: completa, type: "jpeg", quality: completa ? 74 : 84 });
       console.log("ok", nombre);
       await ctx.close();
     }

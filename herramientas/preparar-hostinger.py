@@ -24,17 +24,17 @@ import io
 import re
 import shutil
 import sys
+import tempfile
 import zipfile
 from pathlib import Path
 from urllib.parse import unquote
 
-WEB = Path(__file__).resolve().parent
-CREAX = next(p for p in WEB.parents if p.name == "CreaX")
-SALIDA = CREAX / "Subir a Hostinger - creax.net.pe"
-ZIP = CREAX / "Subir a Hostinger - creax.net.pe.zip"
-RESPALDO = CREAX.parent / "CreaX-version-anterior" / "Subir a Hostinger (copia anterior)"
+PROYECTO = Path(__file__).resolve().parent.parent          # la carpeta Web
+WEB = PROYECTO / "sitio"                                    # lo que se publica
+SALIDA = Path(tempfile.gettempdir()) / "creax-subir-a-hostinger"
+ZIP = PROYECTO / "Subir a Hostinger - creax.net.pe.zip"
 DOMINIO = "https://creax.net.pe/"
-BORRADOR = "https://chirinosj0719-rgb.github.io/creax-web/"
+BORRADOR = "https://creaxpe.github.io/creax-web/"
 
 PAGINAS = ["index.html", "servicios.html", "automatizaciones.html", "bocetos.html", "nosotros.html",
            "privacidad.html", "terminos.html", "404.html"]
@@ -183,11 +183,8 @@ def main():
         if partes & NUNCA or ruta.suffix.lower() == ".ttf":
             sys.exit(f"Se iba a copiar algo que no va a internet: {ruta.relative_to(WEB)}")
 
-    if SALIDA.exists():                                  # la copia anterior no se borra: pasa al respaldo
-        if RESPALDO.exists():
-            shutil.rmtree(RESPALDO)
-        RESPALDO.parent.mkdir(parents=True, exist_ok=True)
-        shutil.move(str(SALIDA), str(RESPALDO))
+    if SALIDA.exists():                                  # se arma de cero en el temporal; solo queda el ZIP
+        shutil.rmtree(SALIDA)
 
     for ruta in sorted(usados):
         rel = ruta.relative_to(WEB)
@@ -219,7 +216,6 @@ def main():
         for p in sorted(archivos):
             comprimido.write(p, p.relative_to(SALIDA).as_posix())
     peso = sum(p.stat().st_size for p in archivos) / 1024 / 1024
-    print(f"Listo: {SALIDA}")
     print(f"ZIP para subir: {ZIP} ({ZIP.stat().st_size / 1024 / 1024:.1f} MB)")
     print(f"{len(archivos)} archivos, {peso:.1f} MB")
     print("Adentro: " + ", ".join(sorted(p.name for p in SALIDA.iterdir())))

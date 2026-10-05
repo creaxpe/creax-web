@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chirinosj0719-rgb.github.io/creax-web/sitemap.xml
+Sitemap: https://creaxpe.github.io/creax-web/sitemap.xml
