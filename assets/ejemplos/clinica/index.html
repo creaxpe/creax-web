@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<title>Clínica dental · Página de ejemplo de CreaX</title>
+<meta name="description" content="Clínica dental con reserva de citas en línea. Página de ejemplo diseñada por CreaX.">
+<meta name="theme-color" content="#FFFFFF">
+<style>
+@font-face { font-family: "Manrope"; font-weight: 200 800; font-display: swap; src: url("../fuentes/Manrope.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url("../fuentes/JetBrainsMono-500.woff2") format("woff2"); }
+:root {
+  --blanco: #FFFFFF; --fondo: #F4F7F7; --tinta: #0E1A1C; --gris: #4F5D63; --gris-2: #6B787D; --linea: #E1E8E8;
+  --verde: #0E7C74; --verde-osc: #0A5F59; --menta: #DDF4EF; --menta-2: #B9E8DF; --ok: #157A3A;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--blanco); color: var(--tinta); font-family: var(--sans); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+.envoltura { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 22px; }
+h1, h2, h3 { font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; }
+.gris { color: var(--gris-2); }
+.etiqueta { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--verde); display: inline-flex; align-items: center; gap: 10px; }
+.etiqueta::before { content: ""; width: 7px; height: 7px; background: var(--verde); border-radius: 2px; }
+.boton { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px; font-weight: 700; font-size: 15.5px; border: 1px solid transparent; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.boton-verde { background: var(--verde); color: #fff; }
+.boton-verde:hover { background: var(--verde-osc); }
+.boton-linea { border-color: var(--linea); background: var(--blanco); color: var(--tinta); }
+.boton-linea:hover { border-color: var(--tinta); }
+.boton svg { width: 18px; height: 18px; }
+
+/* barra */
+.barra { position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--linea); }
+.barra .envoltura { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 70px; }
+.marca { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -0.02em; }
+.marca span.icono { width: 34px; height: 34px; border-radius: 10px; background: var(--verde); display: grid; place-items: center; }
+.marca span.icono svg { width: 20px; height: 20px; }
+.menu { display: none; gap: 30px; font-weight: 600; font-size: 15px; color: var(--gris); }
+.menu a:hover { color: var(--tinta); }
+.barra .boton { padding: 10px 16px; }
+
+/* portada */
+.portada { background: var(--fondo); border-bottom: 1px solid var(--linea); padding: 56px 0 64px; }
+.portada .envoltura { display: grid; gap: 44px; align-items: center; }
+.portada h1 { font-size: clamp(42px, 6.4vw, 76px); margin: 18px 0 20px; }
+.portada p.entrada { font-size: 19px; color: var(--gris); max-width: 40ch; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.confianza { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 30px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); }
+.confianza span { display: inline-flex; align-items: center; gap: 8px; }
+.confianza span::before { content: "✓"; color: var(--verde); font-weight: 700; }
+.collage { position: relative; padding: 0 0 54px; }
+.collage > img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; border-radius: 22px; border: 1px solid var(--linea); }
+.reserva { position: relative; margin: -110px 14px 0 auto; width: min(330px, 92%); background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; padding: 18px; }
+.reserva header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.reserva header b { font-size: 15px; }
+.reserva header span { font-family: var(--mono); font-size: 11px; color: var(--gris-2); }
+.dias { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px; }
+.dias span { border: 1px solid var(--linea); border-radius: 10px; text-align: center; padding: 7px 0; font-size: 12px; color: var(--gris); line-height: 1.3; }
+.dias span b { display: block; font-size: 16px; color: var(--tinta); }
+.dias span.elegido { background: var(--tinta); border-color: var(--tinta); color: #cfd8d8; }
+.dias span.elegido b { color: #fff; }
+.horas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.horas span { font-family: var(--mono); font-size: 12.5px; padding: 6px 10px; border-radius: 8px; background: var(--fondo); border: 1px solid var(--linea); }
+.horas span.elegido { background: var(--menta); border-color: var(--menta-2); color: var(--verde-osc); }
+.reserva .boton { width: 100%; justify-content: center; padding: 11px; }
+.confirmada { position: absolute; left: 0; bottom: 0; display: inline-flex; align-items: center; gap: 10px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 999px; padding: 9px 16px 9px 10px; font-size: 14px; font-weight: 700; }
+.confirmada i { width: 26px; height: 26px; border-radius: 50%; background: #E3F5EA; color: var(--ok); display: grid; place-items: center; font-style: normal; }
+
+/* secciones */
+section.bloque { padding: 92px 0; }
+.cabeza { display: grid; gap: 14px; margin-bottom: 44px; max-width: 760px; }
+.cabeza h2 { font-size: clamp(34px, 4.6vw, 54px); }
+.cabeza p { color: var(--gris); font-size: 18px; }
+
+.tabla { width: 100%; border-collapse: collapse; }
+.tabla th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris-2); padding: 0 16px 14px 0; border-bottom: 1px solid var(--tinta); }
+.tabla td { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--linea); vertical-align: top; color: var(--gris); }
+.tabla td:first-child { color: var(--tinta); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; white-space: nowrap; }
+.tabla td:last-child { font-family: var(--mono); font-size: 13px; white-space: nowrap; color: var(--tinta); }
+.tabla tr:hover td { background: var(--fondo); }
+.tabla-envoltura { overflow-x: auto; }
+
+.pasos { display: grid; gap: 1px; background: var(--linea); border: 1px solid var(--linea); border-radius: 20px; overflow: hidden; }
+.paso { background: var(--blanco); padding: 30px; }
+.paso .n { font-family: var(--mono); font-size: 13px; color: var(--verde); }
+.paso h3 { font-size: 23px; margin: 30px 0 8px; }
+.paso p { color: var(--gris); font-size: 15.5px; }
+
+.razones .envoltura { display: grid; gap: 44px; align-items: center; }
+.razones img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 22px; }
+.chequeo { list-style: none; display: grid; gap: 0; margin-top: 26px; border-top: 1px solid var(--linea); }
+.chequeo li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid var(--linea); }
+.chequeo li i { width: 26px; height: 26px; border-radius: 8px; background: var(--menta); color: var(--verde-osc); display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 14px; }
+.chequeo b { display: block; font-size: 17px; }
+.chequeo span { color: var(--gris); font-size: 15.5px; }
+
+.equipo { display: grid; gap: 18px; }
+.persona { border: 1px solid var(--linea); border-radius: 20px; overflow: hidden; background: var(--blanco); }
+.persona img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.persona div { padding: 18px 20px 22px; }
+.persona b { display: block; font-size: 19px; letter-spacing: -0.015em; }
+.persona span { color: var(--gris); font-size: 15px; }
+
+.preguntas { display: grid; gap: 10px; max-width: 860px; }
+.preguntas details { border: 1px solid var(--linea); border-radius: 14px; padding: 0 20px; background: var(--blanco); }
+.preguntas summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; font-weight: 700; font-size: 17px; }
+.preguntas summary::-webkit-details-marker { display: none; }
+.preguntas summary::after { content: "+"; font-size: 22px; font-weight: 500; color: var(--verde); }
+.preguntas details[open] summary::after { content: "–"; }
+.preguntas details p { color: var(--gris); padding: 0 0 18px; }
+
+.llamado { background: var(--verde); color: #fff; border-radius: 28px; padding: 56px 32px; display: grid; gap: 22px; }
+.llamado h2 { font-size: clamp(32px, 4.4vw, 52px); }
+.llamado p { color: #E2F3F1; font-size: 18px; max-width: 46ch; }
+.llamado .boton { background: #fff; color: var(--verde-osc); justify-self: start; }
+
+footer { border-top: 1px solid var(--linea); margin-top: 92px; padding: 44px 0 34px; background: var(--fondo); }
+footer .envoltura { display: grid; gap: 28px; }
+footer .columnas { display: grid; gap: 24px; }
+footer b { display: block; margin-bottom: 8px; }
+footer p, footer li { color: var(--gris); font-size: 15px; list-style: none; }
+.creditos { border-top: 1px solid var(--linea); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-family: var(--mono); font-size: 12px; color: var(--gris-2); }
+.creditos a { text-decoration: underline; text-underline-offset: 3px; color: var(--tinta); }
+
+@media (min-width: 860px) {
+  .menu { display: flex; }
+  .portada { padding: 72px 0 84px; }
+  .portada .envoltura { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .pasos { grid-template-columns: repeat(3, 1fr); }
+  .razones .envoltura { grid-template-columns: 1fr 1fr; gap: 72px; }
+  .equipo { grid-template-columns: repeat(3, 1fr); }
+  .llamado { grid-template-columns: 1fr auto; align-items: center; padding: 64px 56px; }
+  .llamado .boton { justify-self: end; }
+  footer .columnas { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="envoltura">
+    <a class="marca" href="#"><span class="icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M7 3c2 0 3 1 5 1s3-1 5-1c3 0 4 3 3.5 6-.4 2.4-1.2 4-1.8 6.5-.5 2.2-.9 5.5-2.6 5.5-2 0-1.5-5-4.1-5S9.1 21 7.9 21c-1.7 0-2.1-3.3-2.6-5.5C4.7 13 3.9 11.4 3.5 9 3 6 4 3 7 3Z"/></svg></span>Clínica dental</a>
+    <nav class="menu" aria-label="Secciones"><a href="#tratamientos">Tratamientos</a><a href="#reservar">Cómo reservar</a><a href="#equipo">Equipo</a><a href="#preguntas">Preguntas</a></nav>
+    <a class="boton boton-verde" href="#">Reservar cita</a>
+  </div>
+</header>
+
+<main>
+  <section class="portada">
+    <div class="envoltura">
+      <div>
+        <p class="etiqueta">Odontología integral</p>
+        <h1>Tu sonrisa, en buenas manos. <span class="gris">Reserva en un minuto.</span></h1>
+        <p class="entrada">Limpiezas, ortodoncia y tratamientos para toda la familia. Elige el día y la hora desde el celular y recibe un recordatorio antes de tu cita.</p>
+        <div class="acciones">
+          <a class="boton boton-verde" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Reservar una cita</a>
+          <a class="boton boton-linea" href="#tratamientos">Ver tratamientos</a>
+        </div>
+        <p class="confianza"><span>Lunes a sábado</span><span>Pago con tarjeta o Yape</span><span>Recordatorio por WhatsApp</span></p>
+      </div>
+      <div class="collage">
+        <img src="fotos/consultorio.jpg" width="1200" height="900" alt="Consultorio dental con sillón y equipos">
+        <div class="reserva" aria-hidden="true">
+          <header><b>Próximos horarios</b><span>LIMPIEZA · 45 MIN</span></header>
+          <div class="dias"><span>Mié<b>8</b></span><span class="elegido">Jue<b>9</b></span><span>Vie<b>10</b></span><span>Sáb<b>11</b></span></div>
+          <div class="horas"><span>09:00</span><span class="elegido">10:30</span><span>12:00</span><span>16:00</span><span>17:30</span></div>
+          <span class="boton boton-verde">Confirmar jueves 10:30</span>
+        </div>
+        <p class="confirmada" aria-hidden="true"><i>✓</i>Cita confirmada · te avisamos un día antes</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="tratamientos">
+    <div class="envoltura">
+      <div class="cabeza"><p class="etiqueta">Tratamientos</p><h2>Lo que hacemos, <span class="gris">explicado sin vueltas.</span></h2><p>Antes de empezar te decimos para qué sirve cada tratamiento y cuánto dura.</p></div>
+      <div class="tabla-envoltura">
+        <table class="tabla">
+          <thead><tr><th>Tratamiento</th><th>Para qué sirve</th><th>Duración</th></tr></thead>
+          <tbody>
+            <tr><td>Limpieza dental</td><td>Retira el sarro y las manchas, y revisa encías y dientes.</td><td>45 min</td></tr>
+            <tr><td>Blanqueamiento</td><td>Aclara el tono de los dientes en una o dos sesiones.</td><td>60 min</td></tr>
+            <tr><td>Ortodoncia</td><td>Alinea los dientes con brackets o alineadores transparentes.</td><td>Según el caso</td></tr>
+            <tr><td>Resinas</td><td>Repara caries y fracturas con material del color del diente.</td><td>30 – 60 min</td></tr>
+            <tr><td>Endodoncia</td><td>Trata el nervio del diente para conservarlo.</td><td>60 – 90 min</td></tr>
+            <tr><td>Odontopediatría</td><td>Atención para niños, con calma y sin apuros.</td><td>30 min</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="reservar" style="background: var(--fondo); border-block: 1px solid var(--linea)">
+    <div class="envoltura">
+      <div class="cabeza"><p class="etiqueta">Cómo reservar</p><h2>Tres pasos <span class="gris">y listo.</span></h2></div>
+      <div class="pasos">
+        <div class="paso"><span class="n">01</span><h3>Elige el tratamiento</h3><p>Desde la web o por WhatsApp, con o sin diagnóstico previo.</p></div>
+        <div class="paso"><span class="n">02</span><h3>Escoge día y hora</h3><p>Ves los horarios libres y reservas el que te acomoda.</p></div>
+        <div class="paso"><span class="n">03</span><h3>Recibe el recordatorio</h3><p>Un día antes te llega un mensaje con la hora y la dirección.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque razones">
+    <div class="envoltura">
+      <img src="fotos/atencion.jpg" width="900" height="900" alt="Dentistas atendiendo a un paciente" loading="lazy">
+      <div>
+        <p class="etiqueta">Por qué elegirnos</p>
+        <h2 style="font-size: clamp(34px, 4.4vw, 52px); margin-top: 14px">Tranquilidad <span class="gris">desde la primera cita.</span></h2>
+        <ul class="chequeo">
+          <li><i>✓</i><div><b>Equipos modernos</b><span>Y esterilización completa en cada atención.</span></div></li>
+          <li><i>✓</i><div><b>Costos claros</b><span>Te explicamos el tratamiento y el precio antes de empezar.</span></div></li>
+          <li><i>✓</i><div><b>Sin esperas</b><span>Llegas a tu hora: la agenda se respeta.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="equipo" style="padding-top: 0">
+    <div class="envoltura">
+      <div class="cabeza"><p class="etiqueta">Equipo</p><h2>Especialistas <span class="gris">para cada tratamiento.</span></h2></div>
+      <div class="equipo">
+        <article class="persona"><img src="fotos/control.jpg" width="900" height="900" alt="Control dental a un niño" loading="lazy"><div><b>Odontopediatría</b><span>Controles y tratamientos para niños.</span></div></article>
+        <article class="persona"><img src="fotos/lampara.jpg" width="800" height="500" alt="Tratamiento con lámpara de fotocurado" loading="lazy"><div><b>Estética dental</b><span>Blanqueamiento y resinas.</span></div></article>
+        <article class="persona"><img src="fotos/espera.jpg" width="900" height="900" alt="Pacientes en la sala de espera" loading="lazy"><div><b>Odontología general</b><span>Limpiezas, diagnóstico y prevención.</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="preguntas" style="padding-top: 0">
+    <div class="envoltura">
+      <div class="cabeza"><p class="etiqueta">Preguntas frecuentes</p><h2>Antes de <span class="gris">tu cita.</span></h2></div>
+      <div class="preguntas">
+        <details open><summary>¿Atienden urgencias?</summary><p>Sí. Escríbenos por WhatsApp y te damos el primer espacio libre del día.</p></details>
+        <details><summary>¿Cómo puedo pagar?</summary><p>Con tarjeta, Yape o en efectivo. Te damos boleta por cada atención.</p></details>
+        <details><summary>¿Cuánto dura la primera cita?</summary><p>Unos 45 minutos: revisamos tu boca, conversamos y te proponemos un plan.</p></details>
+        <details><summary>¿Atienden a niños?</summary><p>Sí, con odontopediatría y con calma para que la visita sea tranquila.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="envoltura">
+    <div class="llamado">
+      <div><h2>Reserva tu cita hoy.</h2><p>Elige el día y la hora. Te confirmamos al instante y te recordamos un día antes.</p></div>
+      <a class="boton" href="#">Reservar una cita</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <div class="columnas">
+      <div><b>Clínica dental</b><p>Av. Principal 456, tu distrito.</p></div>
+      <div><b>Horario</b><ul><li>Lunes a viernes: 9:00 a. m. – 8:00 p. m.</li><li>Sábado: 9:00 a. m. – 2:00 p. m.</li></ul></div>
+      <div><b>Contacto</b><ul><li>WhatsApp y llamadas</li><li>Reservas en línea</li></ul></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

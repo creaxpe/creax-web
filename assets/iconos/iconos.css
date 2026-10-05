@@ -1,0 +1,101 @@
+/* Phosphor Icons (MIT), solo los íconos que usa la web de CreaX. Se arma con aligerar.py. */
+@font-face {
+  font-family: "Phosphor";
+  src: url("./Phosphor-web.woff2?v=464d657c") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ph {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "Phosphor" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ph.ph-arrow-counter-clockwise:before { content: "\e038"; }
+.ph.ph-arrow-down:before { content: "\e03e"; }
+.ph.ph-arrow-right:before { content: "\e06c"; }
+.ph.ph-arrow-up-right:before { content: "\e092"; }
+.ph.ph-arrow-up:before { content: "\e08e"; }
+.ph.ph-arrows-clockwise:before { content: "\e094"; }
+.ph.ph-barbell:before { content: "\e0b6"; }
+.ph.ph-battery-full:before { content: "\e0c0"; }
+.ph.ph-bell-ringing:before { content: "\e5e8"; }
+.ph.ph-briefcase:before { content: "\e0ee"; }
+.ph.ph-browsers:before { content: "\e0f6"; }
+.ph.ph-buildings:before { content: "\e102"; }
+.ph.ph-cake:before { content: "\e780"; }
+.ph.ph-calendar-check:before { content: "\e712"; }
+.ph.ph-caret-down:before { content: "\e136"; }
+.ph.ph-cell-signal-full:before { content: "\e142"; }
+.ph.ph-chart-bar:before { content: "\e150"; }
+.ph.ph-chat-circle-dots:before { content: "\e16c"; }
+.ph.ph-chat-circle-text:before { content: "\e16e"; }
+.ph.ph-check-circle:before { content: "\e184"; }
+.ph.ph-check-square-offset:before { content: "\e188"; }
+.ph.ph-check:before { content: "\e182"; }
+.ph.ph-clock-countdown:before { content: "\ed2c"; }
+.ph.ph-cloud-check:before { content: "\e1b0"; }
+.ph.ph-compass:before { content: "\e1c8"; }
+.ph.ph-credit-card:before { content: "\e1d2"; }
+.ph.ph-cursor:before { content: "\e1dc"; }
+.ph.ph-envelope-simple:before { content: "\e218"; }
+.ph.ph-eye:before { content: "\e220"; }
+.ph.ph-flow-arrow:before { content: "\e6ec"; }
+.ph.ph-gift:before { content: "\e276"; }
+.ph.ph-git-branch:before { content: "\e278"; }
+.ph.ph-hand-pointing:before { content: "\e29a"; }
+.ph.ph-hand-swipe-left:before { content: "\ec94"; }
+.ph.ph-handshake:before { content: "\e582"; }
+.ph.ph-heartbeat:before { content: "\e2ac"; }
+.ph.ph-hourglass-medium:before { content: "\e2b8"; }
+.ph.ph-house-line:before { content: "\e2c4"; }
+.ph.ph-images:before { content: "\e836"; }
+.ph.ph-instagram-logo:before { content: "\e2d0"; }
+.ph.ph-lightning:before { content: "\e2de"; }
+.ph.ph-linkedin-logo:before { content: "\e2ee"; }
+.ph.ph-list-bullets:before { content: "\e2f2"; }
+.ph.ph-list:before { content: "\e2f0"; }
+.ph.ph-lock-simple:before { content: "\e308"; }
+.ph.ph-magnifying-glass:before { content: "\e30c"; }
+.ph.ph-map-pin:before { content: "\e316"; }
+.ph.ph-moon-stars:before { content: "\e58e"; }
+.ph.ph-paint-brush-broad:before { content: "\e590"; }
+.ph.ph-paper-plane-right:before { content: "\e396"; }
+.ph.ph-paper-plane-tilt:before { content: "\e398"; }
+.ph.ph-pencil-simple-line:before { content: "\ebc6"; }
+.ph.ph-person-simple-run:before { content: "\e730"; }
+.ph.ph-phone:before { content: "\e3b8"; }
+.ph.ph-robot:before { content: "\e762"; }
+.ph.ph-scales:before { content: "\e750"; }
+.ph.ph-shield-check:before { content: "\e40c"; }
+.ph.ph-shopping-cart-simple:before { content: "\e420"; }
+.ph.ph-storefront:before { content: "\e470"; }
+.ph.ph-t-shirt:before { content: "\e670"; }
+.ph.ph-table:before { content: "\e476"; }
+.ph.ph-tooth:before { content: "\e9cc"; }
+.ph.ph-trend-up:before { content: "\e4ae"; }
+.ph.ph-users-three:before { content: "\e68e"; }
+.ph.ph-whatsapp-logo:before { content: "\e5d0"; }
+.ph.ph-wifi-high:before { content: "\e4ea"; }
+.ph.ph-x:before { content: "\e4f6"; }

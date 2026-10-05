@@ -1,0 +1,16 @@
+Fuentes de las páginas de ejemplo (assets/ejemplos/)
+
+Todas vienen de Google Fonts y se distribuyen con la SIL Open Font License, versión 1.1:
+https://openfontlicense.org
+
+- Young Serif y Outfit (repostería)      https://fonts.google.com/specimen/Young+Serif
+                                          https://fonts.google.com/specimen/Outfit
+- Manrope y JetBrains Mono (clínica)      https://fonts.google.com/specimen/Manrope
+                                          https://fonts.google.com/specimen/JetBrains+Mono
+- Anton, Archivo y Archivo Narrow (gimnasio)
+                                          https://fonts.google.com/specimen/Anton
+                                          https://fonts.google.com/specimen/Archivo
+                                          https://fonts.google.com/specimen/Archivo+Narrow
+
+Los archivos .woff2 traen solo el juego de caracteres latino, el que usa el español.
+El texto completo de la licencia y los autores de cada fuente están en su página de Google Fonts.

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<title>Gimnasio · Página de ejemplo de CreaX</title>
+<meta name="description" content="Gimnasio con clases todos los días, planes y entrenadores. Página de ejemplo diseñada por CreaX.">
+<meta name="theme-color" content="#0B0B0B">
+<style>
+@font-face { font-family: "Anton"; font-weight: 400; font-display: swap; src: url("../fuentes/Anton-400.woff2") format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 100 900; font-display: swap; src: url("../fuentes/Archivo.woff2") format("woff2"); }
+@font-face { font-family: "Archivo Narrow"; font-weight: 400 700; font-display: swap; src: url("../fuentes/ArchivoNarrow.woff2") format("woff2"); }
+:root {
+  --negro: #0B0B0B; --panel: #151515; --linea: #2A2A2A; --texto: #F4F4F4; --gris: #A8A8A8;
+  --naranja: #FF5B1F; --naranja-osc: #E2470F;
+  --display: "Anton", Impact, "Arial Narrow", sans-serif; --sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; --narrow: "Archivo Narrow", "Arial Narrow", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--negro); color: var(--texto); font-family: var(--sans); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+.envoltura { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 22px; }
+h1, h2, h3, .marca { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: 0.92; letter-spacing: 0.005em; }
+.punto { color: var(--naranja); }
+.rotulo { font-family: var(--narrow); font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gris); display: inline-flex; align-items: center; gap: 10px; }
+.rotulo::before { content: ""; width: 18px; height: 2px; background: var(--naranja); }
+.boton { display: inline-flex; align-items: center; gap: 12px; padding: 15px 22px; border-radius: 999px; font-family: var(--narrow); font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; border: 1.5px solid transparent; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.boton-naranja { background: var(--naranja); color: var(--negro); }
+.boton-naranja:hover { background: var(--texto); }
+.boton-linea { border-color: rgba(244, 244, 244, 0.35); color: var(--texto); }
+.boton-linea:hover { border-color: var(--texto); }
+.flecha { width: 30px; height: 30px; border-radius: 50%; background: var(--negro); color: var(--naranja); display: grid; place-items: center; margin: -6px -10px -6px 0; }
+.flecha svg { width: 15px; height: 15px; }
+
+/* barra */
+.barra { position: sticky; top: 0; z-index: 10; background: rgba(11, 11, 11, 0.92); border-bottom: 1px solid var(--linea); }
+.barra .envoltura { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 70px; }
+.marca { font-size: 30px; letter-spacing: 0.02em; }
+.menu { display: none; gap: 30px; font-family: var(--narrow); font-weight: 600; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); }
+.menu a:hover { color: var(--texto); }
+.barra .boton { padding: 11px 16px; font-size: 13px; }
+
+/* portada */
+.portada { position: relative; min-height: min(88vh, 820px); display: grid; align-items: end; overflow: hidden; border-bottom: 1px solid var(--linea); }
+.portada > img { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+.portada::before { content: ""; position: absolute; inset: 0; z-index: 1; background: rgba(11, 11, 11, 0.66); }
+.portada .envoltura { position: relative; z-index: 2; padding-top: 120px; padding-bottom: 40px; }
+.portada h1 { font-size: clamp(76px, 15vw, 200px); margin: 16px 0 22px; }
+.portada p.entrada { max-width: 46ch; font-size: 18.5px; color: #DADADA; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hechos { position: relative; display: grid; gap: 12px; margin-top: 52px; padding-top: 22px; border-top: 1px solid rgba(244, 244, 244, 0.2); font-family: var(--narrow); font-weight: 600; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #E2E2E2; }
+.hechos span { display: inline-flex; align-items: center; gap: 10px; }
+.hechos span::before { content: ""; width: 8px; height: 8px; background: var(--naranja); }
+
+/* cinta */
+.cinta { border-bottom: 1px solid var(--linea); overflow: hidden; padding: 20px 0; }
+.cinta-pista { display: flex; width: max-content; animation: correr 30s linear infinite; }
+.cinta-pista span { font-family: var(--display); font-size: 46px; text-transform: uppercase; padding: 0 26px; white-space: nowrap; display: inline-flex; align-items: center; gap: 52px; }
+.cinta-pista span:nth-child(even) { color: transparent; -webkit-text-stroke: 1px var(--texto); }
+.cinta-pista span::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--naranja); }
+@keyframes correr { to { transform: translateX(-50%); } }
+
+/* secciones */
+section.bloque { padding: 96px 0; border-bottom: 1px solid var(--linea); }
+.cabeza { display: grid; gap: 18px; margin-bottom: 44px; }
+.cabeza h2 { font-size: clamp(54px, 9vw, 112px); }
+.cabeza p { color: var(--gris); max-width: 52ch; font-size: 17.5px; }
+
+.clases { list-style: none; border-top: 1px solid var(--linea); }
+.clase { display: grid; grid-template-columns: 40px 1fr auto; gap: 14px 18px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--linea); }
+.clase .n { font-family: var(--narrow); font-weight: 600; color: var(--gris); font-size: 14px; align-self: start; padding-top: 10px; }
+.clase h3 { font-size: clamp(44px, 7vw, 84px); transition: color .2s ease; }
+.clase p { grid-column: 2 / -1; color: var(--gris); font-size: 16px; }
+.clase .chips { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+.clase .chips span { font-family: var(--narrow); font-weight: 600; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--linea); color: #D6D6D6; }
+.clase img { grid-row: 1; grid-column: 3; width: 92px; height: 92px; object-fit: cover; border-radius: 14px; filter: grayscale(1); transition: filter .25s ease; }
+.clase:hover h3 { color: var(--naranja); }
+.clase:hover img { filter: none; }
+
+.horario-envoltura { overflow-x: auto; border: 1px solid var(--linea); border-radius: 18px; }
+.horario { width: 100%; min-width: 720px; border-collapse: collapse; }
+.horario th, .horario td { padding: 16px 14px; border-bottom: 1px solid var(--linea); text-align: left; font-size: 15px; }
+.horario th { font-family: var(--narrow); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gris); background: var(--panel); }
+.horario td:first-child { font-family: var(--narrow); font-weight: 700; color: var(--texto); letter-spacing: 0.06em; }
+.horario td { color: #D6D6D6; }
+.horario tr:last-child td { border-bottom: 0; }
+.horario .hoy { background: rgba(255, 91, 31, 0.12); color: var(--texto); }
+.horario th.hoy { background: var(--naranja); color: var(--negro); }
+
+.planes { display: grid; gap: 18px; }
+.plan { border: 1px solid var(--linea); border-radius: 22px; padding: 30px; display: grid; gap: 18px; align-content: start; background: var(--panel); }
+.plan.destacado { border-color: var(--naranja); background: #1B120E; }
+.plan .tipo { font-family: var(--narrow); font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gris); display: flex; justify-content: space-between; align-items: center; }
+.plan .tipo em { font-style: normal; color: var(--negro); background: var(--naranja); padding: 4px 10px; border-radius: 999px; font-size: 11.5px; }
+.plan .precio { font-family: var(--display); font-size: 64px; line-height: 1; }
+.plan .precio small { font-family: var(--sans); font-size: 15px; color: var(--gris); margin-left: 6px; }
+.plan ul { list-style: none; display: grid; gap: 10px; }
+.plan li { display: flex; gap: 10px; color: #D6D6D6; font-size: 15.5px; }
+.plan li::before { content: "→"; color: var(--naranja); }
+.plan .boton { justify-content: center; margin-top: 6px; }
+
+.coach .envoltura { display: grid; gap: 40px; align-items: center; }
+.coach img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 22px; }
+.coach h2 { font-size: clamp(52px, 8vw, 96px); margin: 16px 0 20px; }
+.coach p { color: var(--gris); font-size: 17.5px; max-width: 48ch; }
+
+.galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; filter: grayscale(1); }
+
+.final { background: var(--naranja); color: var(--negro); }
+.final .envoltura { padding-top: 84px; padding-bottom: 84px; display: grid; gap: 28px; }
+.final h2 { font-size: clamp(54px, 9vw, 120px); }
+.final .boton { background: var(--negro); color: var(--texto); justify-self: start; }
+.final .boton:hover { background: #262626; }
+
+footer { padding: 52px 0 34px; }
+footer .columnas { display: grid; gap: 24px; margin-bottom: 40px; }
+footer b { display: block; font-family: var(--narrow); letter-spacing: 0.14em; text-transform: uppercase; font-size: 13px; color: var(--gris); margin-bottom: 8px; }
+footer p, footer li { list-style: none; color: #D6D6D6; }
+.creditos { border-top: 1px solid var(--linea); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 14px; color: var(--gris); }
+.creditos a { color: var(--texto); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 880px) {
+  .menu { display: flex; }
+  .hechos { grid-template-columns: repeat(3, auto); justify-content: start; gap: 40px; }
+  .clase { grid-template-columns: 70px minmax(0, 1fr) minmax(0, 0.9fr) 110px; }
+  .clase h3 { grid-column: 2; }
+  .clase p { grid-column: 3; grid-row: 1; }
+  .clase .chips { grid-column: 3; grid-row: 2; }
+  .clase img { grid-column: 4; grid-row: 1 / span 2; width: 110px; height: 110px; }
+  .planes { grid-template-columns: repeat(3, 1fr); }
+  .coach .envoltura { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .galeria { grid-template-columns: repeat(4, 1fr); }
+  .final .envoltura { grid-template-columns: 1fr auto; align-items: end; }
+  footer .columnas { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .cinta-pista { animation: none; } }
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="envoltura">
+    <a class="marca" href="#">Gimnasio<span class="punto">.</span></a>
+    <nav class="menu" aria-label="Secciones"><a href="#clases">Clases</a><a href="#horarios">Horarios</a><a href="#planes">Planes</a><a href="#coach">Coaches</a></nav>
+    <a class="boton boton-naranja" href="#">Clase de prueba</a>
+  </div>
+</header>
+
+<main>
+  <section class="portada">
+    <img src="fotos/portada.jpg" width="1200" height="900" alt="Sala de entrenamiento del gimnasio">
+    <div class="envoltura">
+      <p class="rotulo">Fuerza · Cardio · Funcional · Yoga</p>
+      <h1>Entrena<br>sin excusas<span class="punto">.</span></h1>
+      <p class="entrada">Sala de máquinas, clases grupales todos los días y entrenadores que te arman la rutina. Reserva tu clase desde el celular.</p>
+      <div class="acciones">
+        <a class="boton boton-naranja" href="#">Reservar clase de prueba <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+        <a class="boton boton-linea" href="#planes">Ver planes</a>
+      </div>
+      <div class="hechos"><span>Abierto de 6 a. m. a 11 p. m.</span><span>Clases todos los días</span><span>Primera clase de prueba</span></div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta-pista">
+      <span>Fuerza</span><span>Cardio</span><span>Funcional</span><span>Yoga</span><span>Spinning</span><span>Box</span>
+      <span>Fuerza</span><span>Cardio</span><span>Funcional</span><span>Yoga</span><span>Spinning</span><span>Box</span>
+    </div>
+  </div>
+
+  <section class="bloque" id="clases">
+    <div class="envoltura">
+      <div class="cabeza"><p class="rotulo">Clases</p><h2>Elige cómo<br>quieres sudar<span class="punto">.</span></h2></div>
+      <ol class="clases">
+        <li class="clase"><span class="n">01</span><h3>Funcional</h3><p>Circuitos con kettlebells, cajones y peso corporal. Trabajas todo el cuerpo en 45 minutos.</p><div class="chips"><span>Lun · Mié · Vie</span><span>Intensidad alta</span></div><img src="fotos/galeria-4.jpg" width="900" height="900" alt="Kettlebells en el piso del gimnasio" loading="lazy"></li>
+        <li class="clase"><span class="n">02</span><h3>Fuerza</h3><p>Técnica de levantamiento con barra y discos, con un coach que corrige cada repetición.</p><div class="chips"><span>Mar · Jue · Sáb</span><span>Todos los niveles</span></div><img src="fotos/item-6.jpg" width="800" height="500" alt="Persona levantando una barra con discos" loading="lazy"></li>
+        <li class="clase"><span class="n">03</span><h3>Cardio</h3><p>Intervalos en cinta, bicicleta y remo para subir la resistencia sin aburrirte.</p><div class="chips"><span>Todos los días</span><span>Intensidad media</span></div><img src="fotos/item-2.jpg" width="800" height="500" alt="Persona corriendo en una cinta" loading="lazy"></li>
+        <li class="clase"><span class="n">04</span><h3>Yoga</h3><p>Movilidad, respiración y fuerza suave para cerrar la semana.</p><div class="chips"><span>Sábado y domingo</span><span>Intensidad baja</span></div><img src="fotos/galeria-2.jpg" width="900" height="900" alt="Persona haciendo una postura de yoga al aire libre" loading="lazy"></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="bloque" id="horarios">
+    <div class="envoltura">
+      <div class="cabeza"><p class="rotulo">Horarios</p><h2>Tu semana<span class="punto">.</span></h2><p>Las clases duran 45 minutos. Reserva tu cupo desde el celular hasta una hora antes.</p></div>
+      <div class="horario-envoltura">
+        <table class="horario">
+          <thead><tr><th>Hora</th><th>Lun</th><th>Mar</th><th class="hoy">Mié</th><th>Jue</th><th>Vie</th><th>Sáb</th></tr></thead>
+          <tbody>
+            <tr><td>6:30</td><td>Funcional</td><td>Cardio</td><td class="hoy">Funcional</td><td>Cardio</td><td>Funcional</td><td>Fuerza</td></tr>
+            <tr><td>9:00</td><td>Cardio</td><td>Fuerza</td><td class="hoy">Cardio</td><td>Fuerza</td><td>Cardio</td><td>Yoga</td></tr>
+            <tr><td>18:30</td><td>Fuerza</td><td>Funcional</td><td class="hoy">Fuerza</td><td>Funcional</td><td>Fuerza</td><td>—</td></tr>
+            <tr><td>20:00</td><td>Funcional</td><td>Cardio</td><td class="hoy">Funcional</td><td>Cardio</td><td>Box</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="planes">
+    <div class="envoltura">
+      <div class="cabeza"><p class="rotulo">Planes</p><h2>Sin letra<br>chica<span class="punto">.</span></h2></div>
+      <div class="planes">
+        <article class="plan"><p class="tipo">Mensual</p><p class="precio">S/ 120<small>al mes</small></p><ul><li>Sala de máquinas</li><li>Clases grupales</li><li>Evaluación física al empezar</li></ul><a class="boton boton-linea" href="#">Elegir mensual</a></article>
+        <article class="plan destacado"><p class="tipo">Trimestral <em>El más elegido</em></p><p class="precio">S/ 330<small>3 meses</small></p><ul><li>Todo lo del plan mensual</li><li>Una sesión con coach al mes</li><li>Congela tu plan una semana</li></ul><a class="boton boton-naranja" href="#">Elegir trimestral</a></article>
+        <article class="plan"><p class="tipo">Anual</p><p class="precio">S/ 1,200<small>12 meses</small></p><ul><li>Todo lo del plan trimestral</li><li>Rutina hecha a tu medida</li><li>Invita a un amigo cada mes</li></ul><a class="boton boton-linea" href="#">Elegir anual</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque coach" id="coach">
+    <div class="envoltura">
+      <img src="fotos/item-4.jpg" width="800" height="500" alt="Entrenador personal de espaldas, con polo de personal trainer" loading="lazy">
+      <div>
+        <p class="rotulo">Coaches</p>
+        <h2>Entrena con<br>un coach<span class="punto">.</span></h2>
+        <p>Te evalúa, arma tu rutina y te acompaña en la sala. Ideal si recién empiezas o si quieres romper tu estancamiento.</p>
+        <div class="acciones"><a class="boton boton-naranja" href="#">Agendar evaluación</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" style="padding: 22px 0">
+    <div class="envoltura galeria">
+      <img src="fotos/galeria-1.jpg" width="900" height="900" alt="Máquinas de entrenamiento" loading="lazy">
+      <img src="fotos/galeria-3.jpg" width="900" height="900" alt="Pasillo de casilleros" loading="lazy">
+      <img src="fotos/item-1.jpg" width="800" height="500" alt="Barra con discos en el piso" loading="lazy">
+      <img src="fotos/item-3.jpg" width="800" height="500" alt="Persona estirando antes de entrenar" loading="lazy">
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="envoltura">
+      <h2>Tu primera clase<br>va por la casa<span style="color: var(--negro)">.</span></h2>
+      <a class="boton" href="#">Reservar ahora</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <div class="columnas">
+      <div><b>Gimnasio</b><p>Av. Principal 789, tu distrito.</p></div>
+      <div><b>Horario</b><ul><li>Lunes a viernes: 6:00 a. m. – 11:00 p. m.</li><li>Sábado y domingo: 8:00 a. m. – 2:00 p. m.</li></ul></div>
+      <div><b>Contacto</b><ul><li>WhatsApp y llamadas</li><li>Reservas en línea</li></ul></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

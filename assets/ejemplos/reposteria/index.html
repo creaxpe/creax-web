@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="robots" content="noindex, nofollow">
+<title>Repostería · Página de ejemplo de CreaX</title>
+<meta name="description" content="Tortas de cumpleaños, postres y cajas de dulces hechas cada mañana. Página de ejemplo diseñada por CreaX.">
+<meta name="theme-color" content="#FBF4EA">
+<style>
+@font-face { font-family: "Young Serif"; font-weight: 400; font-display: swap; src: url("../fuentes/YoungSerif-400.woff2") format("woff2"); }
+@font-face { font-family: "Outfit"; font-weight: 300 700; font-display: swap; src: url("../fuentes/Outfit.woff2") format("woff2"); }
+:root {
+  --crema: #FBF4EA; --crema-2: #F3E6D3; --cacao: #2A1712; --cacao-2: #6A4C42; --linea: rgba(42, 23, 18, 0.14);
+  --fram: #C42D57; --fram-claro: #F9DCE3; --mante: #F6D78B; --pista: #CFE3C6; --blanco: #FFFDF9;
+  --serif: "Young Serif", Georgia, serif; --sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--crema); color: var(--cacao); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+.envoltura { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+h1, h2, h3, .marca { font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em; line-height: 1.05; }
+.subrayado { color: var(--fram); position: relative; z-index: 0; isolation: isolate; white-space: nowrap; }
+.subrayado::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0.02em; height: 0.12em; border-radius: 99px; background: var(--mante); z-index: -1; }
+.boton { display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border-radius: 999px; font-weight: 600; font-size: 16px; border: 1.5px solid transparent; transition: background-color .25s ease, color .25s ease, transform .25s ease; }
+.boton-lleno { background: var(--fram); color: #fff; }
+.boton-lleno:hover { background: var(--cacao); }
+.boton-borde { border-color: var(--cacao); color: var(--cacao); }
+.boton-borde:hover { background: var(--cacao); color: var(--crema); }
+.boton svg { width: 18px; height: 18px; }
+.ojo { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cacao-2); }
+.ojo::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--fram); }
+
+/* aviso y barra */
+.aviso { background: var(--cacao); color: var(--crema); font-size: 14px; text-align: center; padding: 9px 16px; }
+.aviso b { color: var(--mante); font-weight: 600; }
+.barra { position: sticky; top: 0; z-index: 10; background: rgba(251, 244, 234, 0.94); border-bottom: 1px solid var(--linea); }
+.barra .envoltura { display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 74px; }
+.marca { font-size: 28px; display: inline-flex; align-items: baseline; gap: 8px; }
+.marca small { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fram); }
+.menu { display: none; gap: 28px; font-weight: 500; color: var(--cacao-2); }
+.menu a:hover { color: var(--cacao); }
+.barra .boton { padding: 11px 18px; font-size: 15px; }
+
+/* portada */
+.portada { padding: 48px 0 64px; }
+.portada .envoltura { display: grid; gap: 40px; align-items: center; }
+.portada h1 { font-size: clamp(46px, 7.4vw, 92px); margin: 18px 0 22px; }
+.portada p.entrada { font-size: 19px; color: var(--cacao-2); max-width: 34ch; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.datos { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 34px; font-size: 15px; color: var(--cacao-2); }
+.datos span { display: inline-flex; align-items: center; gap: 8px; }
+.datos svg { width: 18px; height: 18px; color: var(--fram); }
+.arco { position: relative; }
+.arco img { width: 100%; aspect-ratio: 4 / 4.6; object-fit: cover; border-radius: 999px 999px 28px 28px; }
+.sello { position: absolute; left: -18px; bottom: 34px; width: 128px; height: 128px; border-radius: 50%; background: var(--mante); display: grid; place-items: center; }
+.sello svg { width: 112px; height: 112px; animation: girar 22s linear infinite; }
+.sello b { position: absolute; font-family: var(--serif); font-size: 30px; color: var(--cacao); }
+.etiqueta-precio { position: absolute; right: 18px; top: 26px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; padding: 12px 16px; }
+.etiqueta-precio span { display: block; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cacao-2); }
+.etiqueta-precio b { font-family: var(--serif); font-size: 22px; font-weight: 400; }
+@keyframes girar { to { transform: rotate(360deg); } }
+
+/* cinta */
+.cinta { background: var(--pista); border-block: 1px solid var(--linea); overflow: hidden; padding: 16px 0; }
+.cinta-pista { display: flex; width: max-content; animation: correr 34s linear infinite; }
+.cinta-pista span { font-family: var(--serif); font-size: 26px; padding: 0 22px; white-space: nowrap; display: inline-flex; align-items: center; gap: 44px; }
+.cinta-pista span::after { content: "✦"; color: var(--fram); font-size: 18px; }
+@keyframes correr { to { transform: translateX(-50%); } }
+
+/* secciones */
+section.bloque { padding: 88px 0; }
+.cabeza { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 40px; }
+.cabeza h2 { font-size: clamp(36px, 5vw, 60px); margin-top: 12px; }
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; }
+.filtros span { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--linea); font-size: 15px; font-weight: 500; }
+.filtros span.activo { background: var(--cacao); color: var(--crema); border-color: var(--cacao); }
+
+.carta { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; }
+.producto { background: var(--blanco); border: 1px solid var(--linea); border-radius: 26px; padding: 12px; display: grid; gap: 14px; }
+.producto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; }
+.producto .texto { padding: 0 8px 8px; display: grid; gap: 4px; }
+.producto h3 { font-size: 24px; }
+.producto p { font-size: 15px; color: var(--cacao-2); line-height: 1.5; }
+.producto .pie { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+.producto .precio { font-weight: 600; }
+.producto .precio small { font-weight: 400; color: var(--cacao-2); font-size: 13px; }
+.mas { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--fram-claro); color: var(--fram); font-size: 22px; line-height: 1; }
+.producto .sello-chico { justify-self: start; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cacao); background: var(--mante); padding: 4px 10px; border-radius: 99px; }
+
+/* cómo encargar */
+.encargar { background: var(--fram-claro); border-radius: 40px; margin: 0 12px; }
+.pasos { display: grid; gap: 18px; counter-reset: paso; }
+.paso { background: var(--blanco); border-radius: 26px; padding: 28px; border: 1px solid var(--linea); }
+.paso .numero { font-family: var(--serif); font-size: 64px; line-height: 1; color: var(--fram); }
+.paso h3 { font-size: 26px; margin: 16px 0 8px; }
+.paso p { color: var(--cacao-2); font-size: 16px; }
+
+/* eventos */
+.eventos .envoltura { display: grid; gap: 34px; align-items: center; }
+.eventos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 28px; }
+.eventos h2 { font-size: clamp(36px, 5vw, 58px); margin: 14px 0 18px; }
+.eventos p { color: var(--cacao-2); font-size: 18px; max-width: 46ch; }
+.lista { list-style: none; display: grid; gap: 12px; margin: 26px 0 32px; }
+.lista li { display: flex; gap: 12px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px dashed var(--linea); }
+.lista li::before { content: "✦"; color: var(--fram); }
+
+/* galería */
+.galeria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.galeria img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 22px; }
+
+/* visítanos */
+.visita { background: var(--cacao); color: var(--crema); border-radius: 40px 40px 0 0; padding: 80px 0 40px; }
+.visita .envoltura { display: grid; gap: 40px; }
+.visita h2 { font-size: clamp(38px, 5.4vw, 64px); }
+.visita h2 .subrayado { color: var(--mante); }
+.visita h2 .subrayado::after { background: var(--fram); }
+.visita p { color: rgba(251, 244, 234, 0.78); margin-top: 14px; max-width: 40ch; }
+.horario { border-top: 1px solid rgba(251, 244, 234, 0.2); }
+.horario div { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(251, 244, 234, 0.2); }
+.horario b { font-weight: 500; }
+.visita .boton-lleno:hover { background: var(--mante); color: var(--cacao); }
+.creditos { border-top: 1px solid rgba(251, 244, 234, 0.2); margin-top: 56px; padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; font-size: 14px; color: rgba(251, 244, 234, 0.7); }
+.creditos a { text-decoration: underline; text-underline-offset: 3px; color: var(--crema); }
+
+@media (min-width: 820px) {
+  .menu { display: flex; }
+  .carta { grid-template-columns: repeat(3, 1fr); }
+  .portada { padding: 64px 0 96px; }
+  .portada .envoltura { grid-template-columns: 1.08fr 0.92fr; gap: 56px; }
+  .pasos { grid-template-columns: repeat(3, 1fr); }
+  .eventos .envoltura { grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
+  .galeria { grid-template-columns: repeat(4, 1fr); }
+  .visita .envoltura { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+@media (prefers-reduced-motion: reduce) { .sello svg, .cinta-pista { animation: none; } }
+</style>
+</head>
+<body>
+
+<p class="aviso">Encargos con <b>48 horas</b> de anticipación · Recojo en tienda o delivery en tu zona</p>
+
+<header class="barra">
+  <div class="envoltura">
+    <a class="marca" href="#">Repostería <small>casera</small></a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#carta">La carta</a><a href="#encargar">Cómo encargar</a><a href="#eventos">Eventos</a><a href="#visita">Visítanos</a>
+    </nav>
+    <a class="boton boton-lleno" href="#">Encargar</a>
+  </div>
+</header>
+
+<main>
+  <section class="portada">
+    <div class="envoltura">
+      <div>
+        <p class="ojo">Tortas y postres hechos a mano</p>
+        <h1>Tortas que hacen la <span class="subrayado">fiesta</span>.</h1>
+        <p class="entrada">Tortas de cumpleaños, postres y cajas de dulces, hechos cada mañana. Encárgalos por WhatsApp y recógelos listos.</p>
+        <div class="acciones">
+          <a class="boton boton-lleno" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.3 7.9L3 21l1.2-4.5A9 9 0 1 1 21 12Z"/></svg>Encargar por WhatsApp</a>
+          <a class="boton boton-borde" href="#carta">Ver la carta</a>
+        </div>
+        <div class="datos">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Hechas cada mañana</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Recojo o delivery</span>
+        </div>
+      </div>
+      <div class="arco">
+        <img src="fotos/cumpleanos.jpg" width="1400" height="932" alt="Torta de cumpleaños con una vela encendida">
+        <div class="sello" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><defs><path id="circulo" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text font-family="Outfit, sans-serif" font-size="11.5" font-weight="600" letter-spacing="3" fill="#2A1712"><textPath href="#circulo">HECHO A MANO · CADA MAÑANA ·</textPath></text></svg>
+          <b>✦</b>
+        </div>
+        <p class="etiqueta-precio"><span>Tortas desde</span><b>S/ 75</b></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cinta" aria-hidden="true">
+    <div class="cinta-pista">
+      <span>Tortas de cumpleaños</span><span>Cheesecakes</span><span>Macarons</span><span>Tartas de fruta</span><span>Galletas</span><span>Mousse</span>
+      <span>Tortas de cumpleaños</span><span>Cheesecakes</span><span>Macarons</span><span>Tartas de fruta</span><span>Galletas</span><span>Mousse</span>
+    </div>
+  </div>
+
+  <section class="bloque" id="carta">
+    <div class="envoltura">
+      <div class="cabeza">
+        <div><p class="ojo">La carta</p><h2>Nuestros <span class="subrayado">favoritos</span></h2></div>
+        <div class="filtros" aria-hidden="true"><span class="activo">Todo</span><span>Tortas</span><span>Postres</span><span>Para regalar</span></div>
+      </div>
+      <div class="carta">
+        <article class="producto"><img src="fotos/fresas.jpg" width="900" height="602" alt="Torta de fresas con crema" loading="lazy"><div class="texto"><span class="sello-chico">La más pedida</span><h3>Torta de fresas</h3><p>Bizcocho de vainilla, crema chantilly y fresas frescas.</p><div class="pie"><span class="precio">S/ 85 <small>· 12 porciones</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+        <article class="producto"><img src="fotos/chocolate.jpg" width="800" height="500" alt="Tajada de torta de chocolate" loading="lazy"><div class="texto"><h3>Torta de chocolate</h3><p>Húmeda, con fudge casero y cobertura de cacao.</p><div class="pie"><span class="precio">S/ 80 <small>· 12 porciones</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+        <article class="producto"><img src="fotos/tarta.jpg" width="900" height="675" alt="Tarta de frutas frescas" loading="lazy"><div class="texto"><h3>Tarta de frutas</h3><p>Masa quebrada, crema pastelera y fruta de estación.</p><div class="pie"><span class="precio">S/ 70 <small>· 10 porciones</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+        <article class="producto"><img src="fotos/macarons.jpg" width="900" height="600" alt="Macarons de colores" loading="lazy"><div class="texto"><span class="sello-chico">Para regalar</span><h3>Caja de macarons</h3><p>Doce macarons de sabores surtidos, en caja de regalo.</p><div class="pie"><span class="precio">S/ 48 <small>· 12 unidades</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+        <article class="producto"><img src="fotos/mousse.jpg" width="900" height="600" alt="Postres individuales de mousse de frutos rojos" loading="lazy"><div class="texto"><h3>Mousse de frutos rojos</h3><p>Postre individual con base crocante y glaseado brillante.</p><div class="pie"><span class="precio">S/ 14 <small>· unidad</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+        <article class="producto"><img src="fotos/galletas.jpg" width="800" height="500" alt="Galletas de avena" loading="lazy"><div class="texto"><h3>Galletas de avena</h3><p>Con pasas y canela, en bolsa de media docena.</p><div class="pie"><span class="precio">S/ 18 <small>· 6 unidades</small></span><span class="mas" aria-hidden="true">+</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque encargar" id="encargar">
+    <div class="envoltura">
+      <div class="cabeza"><div><p class="ojo">Cómo encargar</p><h2>Tu torta, en <span class="subrayado">tres pasos</span></h2></div></div>
+      <div class="pasos">
+        <div class="paso"><span class="numero">1</span><h3>Elige tu torta</h3><p>Mira la carta y escoge el sabor y el tamaño. Si quieres algo distinto, también lo hacemos.</p></div>
+        <div class="paso"><span class="numero">2</span><h3>Escríbenos</h3><p>Por WhatsApp, con la fecha y la dedicatoria. Te confirmamos al toque.</p></div>
+        <div class="paso"><span class="numero">3</span><h3>Recógela o te la llevamos</h3><p>Lista el día que la necesitas, en tienda o en tu casa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque eventos" id="eventos">
+    <div class="envoltura">
+      <img src="fotos/vitrina.jpg" width="900" height="900" alt="Vitrina con tortas y postres" loading="lazy">
+      <div>
+        <p class="ojo">Eventos</p>
+        <h2>Una mesa de postres para tu <span class="subrayado">celebración</span></h2>
+        <p>Para cumpleaños, bautizos, matrimonios y reuniones de oficina. Armamos la mesa completa con tortas, postres y bocaditos dulces.</p>
+        <ul class="lista"><li>Tortas temáticas y personalizadas</li><li>Bocaditos dulces por ciento</li><li>Cajas de regalo para invitados</li></ul>
+        <a class="boton boton-borde" href="#">Cotizar mi evento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" style="padding-top: 0">
+    <div class="envoltura galeria">
+      <img src="fotos/macarons.jpg" width="900" height="600" alt="Macarons" loading="lazy">
+      <img src="fotos/croissants.jpg" width="800" height="500" alt="Croissants recién horneados" loading="lazy">
+      <img src="fotos/cafe.jpg" width="800" height="500" alt="Taza de café" loading="lazy">
+      <img src="fotos/galletas.jpg" width="800" height="500" alt="Galletas" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer class="visita" id="visita">
+  <div class="envoltura">
+    <div>
+      <p class="ojo" style="color: rgba(251,244,234,.7)">Visítanos</p>
+      <h2>Pasa por tu <span class="subrayado">torta</span></h2>
+      <p>Av. Principal 123, tu distrito. Encargos por WhatsApp de lunes a domingo.</p>
+      <div class="acciones"><a class="boton boton-lleno" href="#">Encargar por WhatsApp</a></div>
+    </div>
+    <div class="horario">
+      <div><b>Lunes a viernes</b><span>8:00 a. m. – 8:00 p. m.</span></div>
+      <div><b>Sábado</b><span>8:00 a. m. – 9:00 p. m.</span></div>
+      <div><b>Domingo</b><span>9:00 a. m. – 2:00 p. m.</span></div>
+    </div>
+  </div>
+  <div class="envoltura">
+  </div>
+</footer>
+
+</body>
+</html>

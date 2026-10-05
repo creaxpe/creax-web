@@ -1,0 +1,6 @@
+Fotos de muestra para el boceto de ejemplo.
+Todas son CC0 o dominio público, obtenidas con la API de Openverse.
+Se reemplazan por las fotos del negocio cuando el cliente las manda.
+
+item-5.jpg  ·  Yoga Pose  ·  CC0  ·  https://stocksnap.io/photo/yoga-pose-PDCKFINKM5
+galeria-2.jpg  ·  Yoga Fitness  ·  CC0  ·  https://stocksnap.io/photo/yoga-fitness-4S23GF9HGW

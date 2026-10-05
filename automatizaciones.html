@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">  <!-- borrador: quitar al publicar la web oficial -->
+<title>Automatización de WhatsApp e Instagram con IA para negocios en Perú | CreaX</title>
+<meta name="description" content="Automatiza la atención de tu negocio en Lima y todo el Perú: asistentes y agentes de IA que responden en WhatsApp e Instagram, confirman pedidos y reservas y lo anotan todo.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CreaX">
+<meta property="og:locale" content="es_PE">
+<meta property="og:url" content="https://creaxpe.github.io/creax-web/automatizaciones.html">
+<meta property="og:title" content="Automatización de WhatsApp e Instagram con IA para negocios en Perú | CreaX">
+<meta property="og:description" content="Automatiza la atención de tu negocio en Lima y todo el Perú: asistentes y agentes de IA que responden en WhatsApp e Instagram, confirman pedidos y reservas y lo anotan todo.">
+<meta property="og:image" content="https://creaxpe.github.io/creax-web/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CreaX: webs, automatizaciones con IA y agentes para empresas">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automatización de WhatsApp e Instagram con IA para negocios en Perú | CreaX">
+<meta name="twitter:description" content="Automatiza la atención de tu negocio en Lima y todo el Perú: asistentes y agentes de IA que responden en WhatsApp e Instagram, confirman pedidos y reservas y lo anotan todo.">
+<meta name="twitter:image" content="https://creaxpe.github.io/creax-web/assets/social.png">
+<meta name="theme-color" content="#B9A6FF">
+<script src="inicio.js?v=202610041900"></script>
+<link rel="icon" href="assets/creax-isotipo.svg?v=202610041900" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=202610041900" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=202610041900">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fuentes/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fuentes/Inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/iconos/iconos.css?v=202610041900">
+<link rel="stylesheet" href="estilos.css?v=202610041900">
+</head>
+
+<body class="color-automatizaciones">
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-caja">
+    <svg class="intro-logo" viewBox="-4 20 270 74">
+      <g transform="translate(0 27.2) scale(0.6)">
+        <rect class="ib" x="8" y="8" width="24" height="24" rx="7" fill="#2B2B2B"/>
+        <rect class="ib" x="64" y="8" width="24" height="24" rx="7" fill="#2B2B2B"/>
+        <rect class="ib" x="36" y="36" width="24" height="24" rx="7" fill="#2B2B2B"/>
+        <rect class="ib" x="8" y="64" width="24" height="24" rx="7" fill="#2B2B2B"/>
+        <rect class="ranura" x="64" y="64" width="24" height="24" rx="7" fill="none" stroke="#F4F4F2" stroke-width="2.5" stroke-dasharray="4 4"/>
+        <circle class="onda" cx="76" cy="76" r="6" fill="none" stroke="#C5F82A" stroke-width="2" vector-effect="non-scaling-stroke"/>
+        <rect class="ib-ultimo" x="64" y="64" width="24" height="24" rx="7" fill="#C5F82A"/>
+      </g>
+      <g class="letra"><path d="M.6819916 .48199464C.6769867 .54499819 .6639862 .58499148 .6329956 .6259918 .57699587 .69999697 .4869995 .7409973 .37799073 .7409973 .17199707 .7409973 .04399109 .59399417 .04399109 .35798646 .04399109 .12298584 .17098999-.023010254 .37399293-.023010254 .55599978-.023010254 .6759949 .08198547 .68499758 .24899292H.5389862C.5289917 .1559906 .47099305 .102996829 .37799073 .102996829 .2619934 .102996829 .19400025 .19699097 .19400025 .35598756 .19400025 .5169983 .2649994 .61299136 .3829956 .61299136 .46998597 .61299136 .5189972 .57099917 .5389862 .48199464H.6819916Z" transform="matrix(64,0,0,-64,62.0,80)" fill="#F4F4F2"/></g><g class="letra"><path d="M.06298828 .5399933V0H.20298767V.2869873C.20298767 .36898805 .24398804 .4099884 .32598878 .4099884 .34098817 .4099884 .35099793 .40899659 .36999513 .4059906V.5479889C.3619995 .548996 .35899354 .548996 .35299684 .548996 .2889862 .548996 .23399353 .5069885 .20298767 .43399049V.5399933H.06298828Z" transform="matrix(64,0,0,-64,108.208,80)" fill="#F4F4F2"/></g><g class="letra"><path d="M.5239868 .22599793C.5249939 .23799134 .5249939 .24299622 .5249939 .25 .5249939 .3039856 .5169983 .35398866 .5039978 .3919983 .46798707 .48999024 .3809967 .548996 .27198792 .548996 .116989139 .548996 .021987915 .43699647 .021987915 .2559967 .021987915 .08299255 .115997318-.023010254 .2689972-.023010254 .3899994-.023010254 .48799134 .04499817 .5189972 .1519928H.3809967C.3639984 .10899353 .32499696 .083999637 .27398683 .083999637 .23399353 .083999637 .20199585 .100997928 .18199158 .1309967 .16899109 .15098572 .1639862 .1749878 .1619873 .22599793H.5239868M.1639862 .31900025C.17298889 .4019928 .20799256 .44198609 .269989 .44198609 .33399964 .44198609 .37199403 .39898683 .3789978 .31900025H.1639862Z" transform="matrix(64,0,0,-64,133.104,80)" fill="#F4F4F2"/></g><g class="letra"><path d="M.5239868 .016998291C.5 .039993287 .49198915 .055999757 .49198915 .08299255V.3829956C.49198915 .49299623 .4169922 .548996 .2709961 .548996 .125 .548996 .04899597 .4869995 .039993287 .3619995H.1749878C.18199158 .41799928 .20498657 .43598939 .27398683 .43598939 .32798768 .43598939 .35499574 .41799928 .35499574 .38198854 .35499574 .3639984 .34599305 .34899903 .33099366 .33999635 .31199647 .32998658 .31199647 .32998658 .24299622 .31900025L.18699646 .30899049C.07998657 .29100038 .027999878 .23599243 .027999878 .13899231 .027999878 .041992189 .09298706-.023010254 .19198609-.023010254 .2519989-.023010254 .30599977 .0019989014 .35598756 .053985597 .35598756 .025985718 .35899354 .015991211 .37199403 0H.5239868V.016998291M.35499574 .21699524C.35499574 .13598633 .31498719 .08999634 .24398804 .08999634 .19699097 .08999634 .16799927 .114990238 .16799927 .15499878 .16799927 .19699097 .18998719 .21699524 .24798584 .22898865L.29599 .23799134C.33299256 .24499512 .33898927 .24699402 .35499574 .25498963V.21699524Z" transform="matrix(64,0,0,-64,168.688,80)" fill="#F4F4F2"/></g>
+      <g transform="translate(203 31.7) scale(0.58)">
+        <path class="barra" d="M20 20 L80 80" stroke="#F4F4F2" stroke-width="19" stroke-linecap="round" fill="none"/>
+        <path class="corte" d="M42 58 L58 42" stroke="#101010" stroke-width="27" fill="none"/>
+        <path class="asta" d="M20 80 L65.4 34.6" stroke="#C5F82A" stroke-width="19" stroke-linecap="round" fill="none"/>
+        <path class="punta" d="M88 12 L80.9 50.2 L49.8 19.1 Z" fill="#C5F82A" stroke="#C5F82A" stroke-width="6" stroke-linejoin="round"/>
+      </g>
+    </svg>
+  </div>
+  <p class="intro-saltar">Toca para entrar</p>
+</div>
+
+
+<div class="avance" id="avance" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-caja">
+    <a class="nav-marca" href="index.html" aria-label="CreaX, inicio">
+      <img class="logo-completo" src="assets/creax-logo.svg?v=202610041900" alt="CreaX" width="113" height="24">
+    </a>
+    <nav class="nav-enlaces">
+      <a class="enlace color-servicios" href="servicios.html">Servicios</a>
+      <a class="enlace color-automatizaciones" href="automatizaciones.html" aria-current="page">Automatizaciones</a>
+      <a class="enlace color-bocetos" href="bocetos.html">Bocetos</a>
+      <a class="enlace color-nosotros" href="nosotros.html">Nosotros</a>
+      <!-- CONTACTO -->
+      <a class="boton boton-principal boton-chico" href="https://wa.me/51966980388?text=Hola%20CreaX%2C%20vengo%20de%20la%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" data-contacto>Contáctanos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= cabecera con el logo grande detrás ================= -->
+  <section class="encabezado encabezado-vivo">
+    <div class="envoltura encabezado-grilla">
+      <div class="encabezado-texto">
+        <p class="marca-seccion revelar">Automatizaciones</p>
+        <h1 class="titulo-gigante revelar">Tu negocio <em class="cursiva resalte" data-texto="atiende solo.">atiende solo.</em></h1>
+        <p class="entrada revelar"><strong>Responde, confirma y anota cada pedido a cualquier hora, en WhatsApp e Instagram, con inteligencia artificial.</strong> Tú te dedicas a vender.</p>
+      </div>
+      <!-- el dibujo usa estos íconos por su código (aligerar.py los busca por nombre): ph-chat-circle-dots ph-robot ph-check ph-bell-ringing -->
+      <figure class="dibujo" data-dibujo="automatizaciones" aria-hidden="true">
+        <svg viewBox="0 34 400 232" focusable="false">
+          <g transform="translate(32 -18) scale(14)">
+            <g class="d-cables" data-entra>
+              <path class="d-cable" d="M5.0526 12H6.3158"/>
+              <path class="d-cable" d="M11.3684 12H12.2C13.3 12 13.35 11.2 13.55 10.1C13.75 9 14.5 8.2105 15.9 8.2105H18.9474"/>
+              <path class="d-cable" d="M12.2 12C13.3 12 13.35 12.8 13.55 13.9C13.75 15 14.5 15.7895 15.9 15.7895H16.4211"/>
+            </g>
+            <path class="d-ruta" id="ruta-ab" d="M2.5263 12H8.8421"/>
+            <path class="d-ruta" id="ruta-bc" d="M8.8421 12H12.2C13.3 12 13.35 11.2 13.55 10.1C13.75 9 14.5 8.2105 15.9 8.2105H21.4737"/>
+            <path class="d-ruta" id="ruta-bd" d="M8.8421 12H12.2C13.3 12 13.35 12.8 13.55 13.9C13.75 15 14.5 15.7895 15.9 15.7895H18.9474"/>
+            <g class="d-nodo" data-entra><circle class="d-onda" cx="2.5263" cy="12" r="2.5263"/><circle class="d-luz" cx="2.5263" cy="12" r="1.32" opacity="0"/><circle class="d-anillo" cx="2.5263" cy="12" r="1.8947"/></g>
+            <g class="d-nodo" data-entra><circle class="d-onda" cx="8.8421" cy="12" r="2.5263"/><circle class="d-luz" cx="8.8421" cy="12" r="1.32" opacity="0"/><circle class="d-anillo" cx="8.8421" cy="12" r="1.8947"/></g>
+            <g class="d-nodo" data-entra><circle class="d-onda" cx="21.4737" cy="8.2105" r="2.5263"/><circle class="d-luz" cx="21.4737" cy="8.2105" r="1.32" opacity="0"/><circle class="d-anillo" cx="21.4737" cy="8.2105" r="1.8947"/></g>
+            <g class="d-nodo" data-entra><circle class="d-onda" cx="18.9474" cy="15.7895" r="2.5263"/><circle class="d-luz" cx="18.9474" cy="15.7895" r="1.32" opacity="0"/><circle class="d-anillo" cx="18.9474" cy="15.7895" r="1.8947"/></g>
+            <circle class="d-senal" cx="2.5263" cy="12" r=".5" opacity="0"/>
+            <circle class="d-senal" cx="8.8421" cy="12" r=".5" opacity="0"/>
+          </g>
+          <g class="d-aviso" opacity="0"><circle class="d-papel d-borde" cx="100" cy="117" r="19"/><text class="d-icono d-icono-oscuro d-icono-aviso" x="100" y="118">&#xe16c;</text></g>
+          <g class="d-aviso" opacity="0"><circle class="d-papel d-borde" cx="188" cy="117" r="19"/><text class="d-icono d-icono-oscuro d-icono-aviso" x="188" y="118">&#xe762;</text></g>
+          <g class="d-aviso" opacity="0"><circle class="d-papel d-borde" cx="365" cy="64" r="19"/><text class="d-icono d-icono-oscuro d-icono-aviso" x="365" y="65">&#xe182;</text></g>
+          <g class="d-aviso" opacity="0"><circle class="d-papel d-borde" cx="330" cy="170" r="19"/><text class="d-icono d-icono-oscuro d-icono-aviso" x="330" y="171">&#xe5e8;</text></g>
+        </svg>
+        <figcaption class="dibujo-pie"><span class="dibujo-texto">Llega un mensaje</span><span class="dibujo-pasos"><i class="activo"></i><i></i><i></i></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= qué genera ================= -->
+  <section id="que-genera">
+    <div class="envoltura">
+      <p class="marca-seccion revelar">Qué genera</p>
+      <h2 class="revelar">Más ventas, <em class="cursiva">menos trabajo</em></h2>
+
+      <div class="beneficios">
+        <article class="beneficio revelar">
+          <i class="ph ph-lightning" aria-hidden="true"></i>
+          <h3>Responde en segundos</h3>
+          <p>El cliente no espera: tiene respuesta al instante, de día o de noche.</p>
+        </article>
+        <article class="beneficio revelar">
+          <i class="ph ph-moon-stars" aria-hidden="true"></i>
+          <h3>Vende fuera de horario</h3>
+          <p>Toma pedidos y reservas aunque el local esté cerrado.</p>
+        </article>
+        <article class="beneficio revelar">
+          <i class="ph ph-check-square-offset" aria-hidden="true"></i>
+          <h3>Ningún pedido se pierde</h3>
+          <p>Cada pedido queda anotado con sus datos, listo para atender.</p>
+        </article>
+        <article class="beneficio revelar">
+          <i class="ph ph-arrows-clockwise" aria-hidden="true"></i>
+          <h3>Clientes que vuelven</h3>
+          <p>Recordatorios y avisos que traen al cliente de nuevo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= cómo funciona ================= -->
+  <section id="flujo-seccion">
+    <div class="envoltura">
+      <div class="metodo-grilla">
+        <div>
+          <p class="marca-seccion revelar">Cómo funciona</p>
+          <h2 class="revelar">Un mensaje entra, el sistema hace <em class="cursiva">el resto</em></h2>
+          <p class="entrada revelar">Elige un tipo de negocio y mira cómo trabaja solo.</p>
+          <p class="entrada revelar">Esto es lo que puedes lograr con el uso de nuestros servicios de automatización.</p>
+        </div>
+
+        <div class="flujo revelar" id="flujo">
+          <p class="flujo-titulo">Un flujo típico</p>
+          <div class="flujo-pestanas" role="tablist" aria-label="Flujo por tipo de negocio">
+            <button class="pestana" role="tab" aria-selected="true" data-flujo="general">General</button>
+            <button class="pestana" role="tab" aria-selected="false" data-flujo="tienda">Tienda</button>
+            <button class="pestana" role="tab" aria-selected="false" data-flujo="servicios">Servicios</button>
+            <button class="pestana" role="tab" aria-selected="false" data-flujo="consultorio">Consultorio</button>
+          </div>
+          <div class="flujo-nodos">
+            <article class="nodo" data-nodo="1">
+              <div class="nodo-icono"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></div>
+              <div><b>Llega un mensaje</b><span>WhatsApp, Instagram o el formulario de la web</span></div>
+            </article>
+            <div class="flujo-linea" aria-hidden="true"><i class="ph ph-arrow-down"></i></div>
+            <article class="nodo" data-nodo="2">
+              <div class="nodo-icono"><i class="ph ph-git-branch" aria-hidden="true"></i></div>
+              <div><b>El sistema decide qué hacer</b><span>Según el horario, el producto o el tipo de consulta</span></div>
+            </article>
+            <div class="flujo-linea" aria-hidden="true"><i class="ph ph-arrow-down"></i></div>
+            <article class="nodo" data-nodo="3">
+              <div class="nodo-icono"><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></div>
+              <div><b>Responde y registra</b><span>Contesta al cliente y anota el pedido donde corresponde</span></div>
+            </article>
+            <div class="flujo-linea" aria-hidden="true"><i class="ph ph-arrow-down"></i></div>
+            <article class="nodo" data-nodo="4">
+              <div class="nodo-icono"><i class="ph ph-bell-ringing" aria-hidden="true"></i></div>
+              <div><b>Avisa al equipo</b><span>El encargado recibe el pedido listo para atender</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="conexiones">
+        <div class="conexiones-texto">
+          <p class="marca-seccion revelar">Integraciones</p>
+          <p class="conexiones-frase revelar">Se conecta con las herramientas que el negocio <em class="cursiva">ya usa.</em></p>
+        </div>
+
+        <div class="orbita revelar" role="img" aria-label="WhatsApp, Instagram, Sheets, Gmail, Meta, Calendar, Notion, Telegram y Mercado Pago conectados al negocio">
+          <span class="orbita-onda" aria-hidden="true"></span>
+          <div class="orbita-centro"><i class="ph ph-storefront" aria-hidden="true"></i><span>Tu negocio</span></div>
+          <div class="anillo anillo-1" aria-hidden="true">
+            <span class="lugar" style="--a: 45deg"><span class="herramienta"><img src="assets/logos/whatsapp.svg" alt="" width="20" height="20">WhatsApp</span></span>
+            <span class="lugar" style="--a: 135deg"><span class="herramienta"><img src="assets/logos/instagram.svg" alt="" width="20" height="20">Instagram</span></span>
+            <span class="lugar" style="--a: 225deg"><span class="herramienta"><img src="assets/logos/googlesheets.svg" alt="" width="20" height="20">Sheets</span></span>
+            <span class="lugar" style="--a: 315deg"><span class="herramienta"><img src="assets/logos/gmail.svg" alt="" width="20" height="20">Gmail</span></span>
+          </div>
+          <div class="anillo anillo-2" aria-hidden="true">
+            <span class="lugar" style="--a: 0deg"><span class="herramienta"><img src="assets/logos/meta.svg" alt="" width="20" height="20">Meta</span></span>
+            <span class="lugar" style="--a: 72deg"><span class="herramienta"><img src="assets/logos/googlecalendar.svg" alt="" width="20" height="20">Calendar</span></span>
+            <span class="lugar" style="--a: 144deg"><span class="herramienta"><img src="assets/logos/notion.svg" alt="" width="20" height="20">Notion</span></span>
+            <span class="lugar" style="--a: 216deg"><span class="herramienta"><img src="assets/logos/telegram.svg" alt="" width="20" height="20">Telegram</span></span>
+            <span class="lugar" style="--a: 288deg"><span class="herramienta"><img src="assets/logos/mercadopago.svg" alt="" width="20" height="20">Mercado Pago</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= la conversación, del lado del cliente ================= -->
+  <section class="conversacion" id="conversacion">
+    <div class="conversacion-pista" id="conversacionPista">
+      <div class="conversacion-fija">
+        <div class="envoltura conversacion-grilla">
+          <div class="conversacion-texto">
+            <p class="marca-seccion">Del lado del cliente</p>
+            <h2>Experiencia del cliente con el negocio <em class="cursiva">automatizado</em></h2>
+            <p class="entrada">Un cliente escribe y el asistente le responde, le muestra opciones y deja el pedido listo. Todo en segundos.</p>
+            <p class="conversacion-avance"><span id="convContador">0</span> de 7 mensajes</p>
+            <button type="button" class="boton boton-secundario boton-chico conversacion-repetir" id="convRepetir" hidden><i class="ph ph-arrow-counter-clockwise" aria-hidden="true"></i> Ver de nuevo</button>
+          </div>
+
+          <div class="laptop" aria-label="Conversación de ejemplo entre un cliente y el asistente del negocio">
+            <div class="laptop-pantalla">
+              <div class="app">
+                <aside class="app-lista">
+                  <p class="app-titulo">Mensajes</p>
+                  <div class="app-contacto activo"><span class="app-avatar">C</span><div><b>Cliente nuevo</b><span>escribiendo…</span></div></div>
+                  <div class="app-contacto"><span class="app-avatar gris"></span><div><i class="b"></i><i class="b corta"></i></div></div>
+                  <div class="app-contacto"><span class="app-avatar gris"></span><div><i class="b"></i><i class="b corta"></i></div></div>
+                  <div class="app-contacto"><span class="app-avatar gris"></span><div><i class="b"></i><i class="b corta"></i></div></div>
+                </aside>
+                <div class="app-chat">
+                  <div class="app-cabecera">
+                    <span class="app-avatar">C</span>
+                    <div><b>Cliente nuevo</b><span>en línea</span></div>
+                    <span class="app-asistente"><i class="ph ph-robot" aria-hidden="true"></i> Asistente activo</span>
+                  </div>
+                  <div class="app-mensajes" id="convMensajes">
+                    <p class="msj cliente" data-paso="1">Hola, ¿tienen disponible el modelo que vi en Instagram?</p>
+                    <p class="msj asistente" data-paso="2">¡Hola! Sí, está disponible en dos colores. ¿Te muestro las opciones?</p>
+                    <p class="msj cliente" data-paso="3">Sí, porfa. ¿Hacen envíos a mi distrito?</p>
+                    <div class="msj asistente" data-paso="4">
+                      <p>Claro, hacemos envíos. Estas son las opciones:</p>
+                      <div class="msj-opciones">
+                        <span><i class="ph ph-t-shirt" aria-hidden="true"></i> Color negro</span>
+                        <span><i class="ph ph-t-shirt" aria-hidden="true"></i> Color arena</span>
+                      </div>
+                    </div>
+                    <p class="msj cliente" data-paso="5">Quiero el negro. ¿Cómo pago?</p>
+                    <div class="msj asistente" data-paso="6">
+                      <p>Te dejo el enlace de pago. Apenas se confirme, preparamos tu pedido.</p>
+                      <span class="msj-enlace"><i class="ph ph-credit-card" aria-hidden="true"></i> Pagar pedido</span>
+                    </div>
+                    <div class="msj sistema" data-paso="7"><i class="ph ph-check-circle" aria-hidden="true"></i> Pedido registrado · el equipo ya recibió el aviso</div>
+                  </div>
+                  <div class="app-escribir"><span>Escribe un mensaje</span><i class="ph ph-paper-plane-right" aria-hidden="true"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="envoltura">
+      <div class="cierre-caja revelar">
+        <h2>Haz <em class="cursiva">crecer</em> tu negocio</h2>
+        <p class="entrada">Las tareas repetitivas frenan tu crecimiento. Con CreaX automatizas la operación diaria y te despides del trabajo manual de una vez por todas.</p>
+        <div class="acciones">
+          <!-- CONTACTO -->
+          <a class="boton boton-principal" href="https://wa.me/51966980388?text=Hola%20CreaX%2C%20vengo%20de%20la%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" data-contacto><i class="ph ph-chat-circle-dots" aria-hidden="true"></i> Contáctanos</a>
+          <a class="boton boton-secundario" href="servicios.html">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="envoltura">
+    <div class="pie-grilla">
+      <div>
+        <span class="firma-pie"><img class="logo-completo" src="assets/creax-logo.svg?v=202610041900" alt="CreaX" width="142" height="30"></span>
+        <p>Agencia de páginas web, automatizaciones con IA y agentes para empresas en Lima, Perú.</p>
+      </div>
+      <div>
+        <p class="pie-titulo">Qué hacemos</p>
+        <ul>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="automatizaciones.html">Automatizaciones</a></li>
+          <li><a href="bocetos.html">Bocetos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="pie-titulo">Contacto</p>
+        <ul>
+          <li><a href="tel:+51966980388">Llámanos</a></li>
+          <li><a href="https://wa.me/51966980388?text=Hola%20CreaX%2C%20vengo%20de%20la%20web%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:admin@creax.net.pe">admin@creax.net.pe</a></li>
+          <li><button type="button" class="enlace-boton" data-contacto>Todos los canales</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-legal">
+      <span>&copy; <span id="anio">2026</span> CreaX</span>
+      <span>Perú</span>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <button type="button" class="enlace-boton" data-cookies>Cookies</button>
+      <a class="volver-arriba" href="#">Volver arriba <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+    </div>
+    <div class="pie-gigante revelar" aria-hidden="true"></div>
+  </div>
+</footer>
+
+<script src="assets/anime.min.js" defer></script>
+<script src="animacion.js?v=202610041900" defer></script>
+</body>
+</html>

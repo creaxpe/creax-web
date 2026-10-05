@@ -1,0 +1,7 @@
+Fotos de muestra para la página de ejemplo de una clínica dental.
+Todas son CC0 o dominio público, obtenidas con la API de Openverse.
+Se reemplazan por las fotos del negocio cuando el cliente las manda.
+
+galeria-4.jpg  ·  Dentist Orthodontist  ·  CC0  ·  https://stocksnap.io/photo/dentist-orthodontist-0XAP6ZHZ9H
+
+Nombres nuevos: sillon (item-3), consultorio (portada), atencion (galeria-2), lampara (item-1), espera (galeria-3), control (galeria-4).

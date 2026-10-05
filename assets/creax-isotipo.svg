@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="CreaX">
+  <!-- Isotipo de CreaX: cinco bloques armados. El del centro va en tinta, y en blanco hueso si la pestaña está en modo oscuro. -->
+  <style>.centro { fill: #101010; } @media (prefers-color-scheme: dark) { .centro { fill: #F4F4F2; } }</style>
+  <rect x="8" y="8" width="24" height="24" rx="7" fill="#FF7A59"/><rect x="64" y="8" width="24" height="24" rx="7" fill="#B9A6FF"/><rect x="36" y="36" width="24" height="24" rx="7" class="centro"/><rect x="8" y="64" width="24" height="24" rx="7" fill="#FFD84D"/><rect x="64" y="64" width="24" height="24" rx="7" fill="#C5F82A"/>
+</svg>

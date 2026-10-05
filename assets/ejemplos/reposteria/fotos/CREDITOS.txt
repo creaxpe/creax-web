@@ -1,0 +1,11 @@
+Fotos de muestra para la página de ejemplo de una repostería.
+Todas son CC0 o dominio público, obtenidas con la API de Openverse.
+Se reemplazan por las fotos del negocio cuando el cliente las manda.
+
+cumpleanos.jpg  ·  3rd birthday cake (Unsplash 10b8Lvvc-4g)  ·  CC0  ·  https://commons.wikimedia.org/w/index.php?curid=61854593
+fresas.jpg      ·  Free strawberry layer cake image  ·  CC0  ·  https://www.rawpixel.com/image/5905356/photo-image-background-public-domain-food
+macarons.jpg    ·  Pink, White & Orange Macarons  ·  CC0  ·  https://www.rawpixel.com/image/5968635/pink-white-orange-macarons
+tarta.jpg       ·  Fresh Fruit Tart  ·  CC0  ·  https://wordpress.org/photos/photo/60861eae6e/
+mousse.jpg      ·  Cupcakes!  ·  CC0  ·  https://www.flickr.com/photos/182866455@N04/49613905902
+chocolate.jpg   ·  Chocolate Cake  ·  CC0  ·  https://stocksnap.io/photo/chocolate-cake-XTNRPGQBYL
+galletas.jpg, croissants.jpg, vitrina.jpg, cafe.jpg  ·  CC0, de la página de ejemplo anterior (panadería), vía Openverse

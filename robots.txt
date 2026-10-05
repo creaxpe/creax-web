@@ -1,0 +1,6 @@
+# robots.txt de CreaX. Mientras la web es borrador, cada página lleva noindex:
+# se quita junto con el dominio propio (ver README).
+User-agent: *
+Allow: /
+
+Sitemap: https://creaxpe.github.io/creax-web/sitemap.xml
