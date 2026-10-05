@@ -3,7 +3,7 @@
 Borrador de la web de CreaX para revisión del equipo. No es la versión publicada:
 las páginas llevan `noindex`, así que no aparecen en buscadores.
 
-**Verla en línea:** https://chirinosj0719-rgb.github.io/creax-web/
+**Verla en línea:** https://creaxpe.github.io/creax-web/
 
 ## Páginas
 
