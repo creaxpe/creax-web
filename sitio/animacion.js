@@ -787,7 +787,7 @@
 
   /* Google Analytics: solo se carga si la persona acepta en el aviso. Mientras ANALYTICS_ID
      esté vacío, la web no carga nada de Google ni usa cookies. Sus dominios ya están en la CSP. */
-  var ANALYTICS_ID = "";
+  var ANALYTICS_ID = "G-ZTXN7YNMRZ";
   var conAnalytics = !!ANALYTICS_ID && location.search.indexOf("estatico") < 0;
   var activarAnalytics = function () {
     if (!conAnalytics || window.gtag) return;
