@@ -438,8 +438,8 @@
 
   /* --------------------------------------------------------------
      5i. Contáctanos: cada botón abre el panel con los canales.
-         Los canales se definen solo acá. Los que todavía no existen
-         van como "Próximamente" y sin enlace. Sin JavaScript, el botón
+         Los canales se definen solo acá. Solo van los que existen
+         (los que no, no se ponen). Sin JavaScript, el botón
          lleva directo al WhatsApp.
      -------------------------------------------------------------- */
   var CANALES = [
@@ -449,8 +449,8 @@
     { icono: "ph-envelope-simple", nombre: "Correo", detalle: "admin@creax.net.pe", color: "var(--c-bocetos-tenue)",
       enlace: "mailto:admin@creax.net.pe?subject=" + encodeURIComponent("Quiero más información") +
         "&body=" + encodeURIComponent("Hola CreaX, vengo de la web y quisiera más información.") },
-    { icono: "ph-instagram-logo", nombre: "Instagram" },
-    { icono: "ph-linkedin-logo", nombre: "LinkedIn" }
+    { icono: "ph-instagram-logo", nombre: "Instagram", detalle: "@creax_pe", color: "var(--c-servicios-tenue)",
+      enlace: "https://www.instagram.com/creax_pe/", externo: true }
   ];
   var disparadores = document.querySelectorAll("[data-contacto]");
   if (disparadores.length) {
