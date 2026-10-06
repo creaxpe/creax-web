@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="noindex, nofollow">  <!-- borrador: quitar al publicar la web oficial -->
 <title>Política de privacidad · CreaX</title>
@@ -23,15 +23,15 @@
 <meta name="twitter:description" content="Qué datos recibe CreaX, para qué los usa, qué guarda la web en tu navegador y cómo ejercer tus derechos.">
 <meta name="twitter:image" content="https://creaxpe.github.io/creax-web/assets/social.png">
 <meta name="theme-color" content="#C5F82A">
-<script src="inicio.js?v=202610061700"></script>
-<link rel="icon" href="assets/creax-isotipo.svg?v=202610061700" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png?v=202610061700" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=202610061700">
+<script src="inicio.js?v=202610061900"></script>
+<link rel="icon" href="assets/creax-isotipo.svg?v=202610061900" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=202610061900" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=202610061900">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="assets/fuentes/SpaceGrotesk-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fuentes/Inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/iconos/iconos.css?v=202610061700">
-<link rel="stylesheet" href="estilos.css?v=202610061700">
+<link rel="stylesheet" href="assets/iconos/iconos.css?v=202610061900">
+<link rel="stylesheet" href="estilos.css?v=202610061900">
 </head>
 
 <body class="color-inicio">
@@ -66,7 +66,7 @@
 <header class="nav" id="nav">
   <div class="nav-caja">
     <a class="nav-marca" href="index.html" aria-label="CreaX, inicio">
-      <img class="logo-completo" src="assets/creax-logo.svg?v=202610061700" alt="CreaX" width="113" height="24">
+      <img class="logo-completo" src="assets/creax-logo.svg?v=202610061900" alt="CreaX" width="113" height="24">
     </a>
     <nav class="nav-enlaces">
       <a class="enlace color-servicios" href="servicios.html">Servicios</a>
@@ -109,13 +109,14 @@
         <h2 id="uso">Para qué los usamos</h2>
         <p>Para responder tu consulta por correo, por teléfono o por WhatsApp, enviarte las referencias o la información que pediste, preparar una propuesta si la pides y hacer seguimiento a la conversación. No vendemos ni cedemos tus datos a terceros para fines comerciales.</p>
         <h2 id="cookies">Cookies y almacenamiento</h2>
-        <p>Esta web <strong>no usa cookies</strong>: ni de publicidad, ni de análisis, ni de seguimiento. Solo guarda en tu navegador tres datos técnicos, necesarios para que funcione:</p>
+        <p>Esta web <strong>no usa cookies de publicidad</strong>. Usa <strong>cookies de análisis de Google Analytics solo si las aceptas</strong> en el aviso: nos dicen qué páginas se visitan, desde qué tipo de dispositivo y cuántas personas nos contactan, sin identificarte. Si eliges «Solo las necesarias», no se cargan. Google trata esos datos según su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad</a>.</p>
+        <p>Además, la web guarda en tu navegador tres datos técnicos, necesarios para que funcione:</p>
         <ul>
           <li><code>creax-intro</code>, en el almacenamiento de la sesión: recuerda que ya viste la animación de entrada, para no repetirla durante la visita. Se borra al cerrar la pestaña.</li>
           <li><code>creax-transicion</code>, en el almacenamiento de la sesión: guarda por un instante el nombre de la página a la que vas, para la animación del cambio de página. Se borra apenas llegas.</li>
           <li><code>creax-cookies</code>, en el almacenamiento local: recuerda tu elección en el aviso de cookies.</li>
         </ul>
-        <p>Puedes cambiar tu elección cuando quieras desde «Cookies», al pie de cada página. Si algún día usamos cookies de análisis, te pediremos permiso antes.</p>
+        <p>Puedes cambiar tu elección cuando quieras desde «Cookies», al pie de cada página: si las rechazas después de haberlas aceptado, Analytics se apaga y sus cookies se borran.</p>
         <h2 id="terceros">Correo, WhatsApp y otros servicios</h2>
         <p>Los mensajes del formulario llegan a nuestro correo, alojado en Hostinger. Cuando nos contactas por WhatsApp o por teléfono, esos servicios aplican sus propias condiciones y políticas de privacidad.</p>
         <h2 id="plazo">Cuánto tiempo los guardamos</h2>
@@ -137,7 +138,7 @@
   <div class="envoltura">
     <div class="pie-grilla">
       <div>
-        <span class="firma-pie"><img class="logo-completo" src="assets/creax-logo.svg?v=202610061700" alt="CreaX" width="142" height="30"></span>
+        <span class="firma-pie"><img class="logo-completo" src="assets/creax-logo.svg?v=202610061900" alt="CreaX" width="142" height="30"></span>
         <p>Agencia de páginas web, automatizaciones con IA y agentes para empresas en Lima, Perú.</p>
       </div>
       <div>
@@ -172,6 +173,6 @@
 </footer>
 
 <script src="assets/anime.min.js" defer></script>
-<script src="animacion.js?v=202610061700" defer></script>
+<script src="animacion.js?v=202610061900" defer></script>
 </body>
 </html>

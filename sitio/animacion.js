@@ -491,6 +491,9 @@
       var caja = crear(c.enlace ? "a" : "div", c.enlace ? "canal" : "canal pronto");
       if (c.enlace) {
         caja.href = c.enlace;
+        caja.addEventListener("click", function () {
+          if (window.creaxMedir) window.creaxMedir("contacto", { canal: c.nombre });
+        });
         if (c.externo) { caja.target = "_blank"; caja.rel = "noopener"; }
       }
       var fondoIcono = crear("span", "canal-icono");
@@ -699,6 +702,7 @@
     };
 
     var enviadoProyecto = function (d) {
+      if (window.creaxMedir) window.creaxMedir("generate_lead", { metodo: "formulario" });
       document.getElementById("proyectoListoTitulo").textContent =
         "¡Listo" + (d.nombre ? ", " + d.nombre.split(" ")[0] : "") + "! Recibimos tu mensaje";
       document.getElementById("proyectoListoTexto").textContent = "Te escribimos pronto a " + d.correo + ".";
@@ -753,7 +757,10 @@
 
     document.getElementById("proyectoWhatsapp").addEventListener("click", function () {
       var d = listoParaEnviar(false);
-      if (d) window.open(whatsappProyecto(d), "_blank", "noopener");
+      if (d) {
+        if (window.creaxMedir) window.creaxMedir("generate_lead", { metodo: "whatsapp_formulario" });
+        window.open(whatsappProyecto(d), "_blank", "noopener");
+      }
     });
 
     document.getElementById("proyectoOtro").addEventListener("click", function () {
@@ -777,6 +784,38 @@
   var CLAVE_COOKIES = "creax-cookies";
   var leerEleccion = function () { try { return localStorage.getItem(CLAVE_COOKIES); } catch (e) { return null; } };
   var guardarEleccion = function (valor) { try { localStorage.setItem(CLAVE_COOKIES, valor); } catch (e) { /* sin memoria: volverá a salir */ } };
+
+  /* Google Analytics: solo se carga si la persona acepta en el aviso. Mientras ANALYTICS_ID
+     esté vacío, la web no carga nada de Google ni usa cookies. Sus dominios ya están en la CSP. */
+  var ANALYTICS_ID = "";
+  var conAnalytics = !!ANALYTICS_ID && location.search.indexOf("estatico") < 0;
+  var activarAnalytics = function () {
+    if (!conAnalytics || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", ANALYTICS_ID);
+    var cargador = document.createElement("script");
+    cargador.async = true;
+    cargador.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(ANALYTICS_ID);
+    document.head.appendChild(cargador);
+  };
+  var apagarAnalytics = function () {
+    if (!ANALYTICS_ID) return;
+    window["ga-disable-" + ANALYTICS_ID] = true;
+    // borra las cookies que haya dejado (_ga, _ga_XXXX) en este dominio y en el principal
+    document.cookie.split(";").forEach(function (c) {
+      var nombre = c.split("=")[0].trim();
+      if (nombre.indexOf("_ga") !== 0) return;
+      [location.hostname, "." + location.hostname.replace(/^www\./, "")].forEach(function (dominio) {
+        document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" + dominio;
+      });
+      document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    });
+  };
+  // Eventos para medir contactos (sirven después para los anuncios). Sin Analytics, no hacen nada.
+  window.creaxMedir = function (evento, datos) { if (window.gtag) window.gtag("event", evento, datos || {}); };
+  if (leerEleccion() === "todas") activarAnalytics();
   var avisoCookies = null;
   var cerrarAviso = function () {
     if (!avisoCookies) return;
@@ -795,7 +834,9 @@
     tituloAviso.textContent = "Cookies";
     var textoAviso = document.createElement("p");
     textoAviso.className = "aviso-texto";
-    textoAviso.textContent = "No usamos cookies de publicidad ni de análisis: solo guardamos lo necesario para que la web funcione. ";
+    textoAviso.textContent = conAnalytics
+      ? "Usamos cookies de análisis (Google Analytics) para saber qué páginas sirven más, solo si las aceptas. No usamos cookies de publicidad. "
+      : "No usamos cookies de publicidad ni de análisis: solo guardamos lo necesario para que la web funcione. ";
     var enlaceAviso = document.createElement("a");
     enlaceAviso.href = "privacidad.html#cookies";
     enlaceAviso.textContent = "Más información";
@@ -807,7 +848,11 @@
       boton.type = "button";
       boton.className = "boton boton-chico " + opcion[2];
       boton.textContent = opcion[0];
-      boton.addEventListener("click", function () { guardarEleccion(opcion[1]); cerrarAviso(); });
+      boton.addEventListener("click", function () {
+        guardarEleccion(opcion[1]);
+        if (opcion[1] === "todas") activarAnalytics(); else apagarAnalytics();
+        cerrarAviso();
+      });
       botonesAviso.appendChild(boton);
       if (i === 0 && enfocar) setTimeout(function () { boton.focus(); }, 50);
     });
