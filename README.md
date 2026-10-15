@@ -29,7 +29,7 @@ comentario justo antes del dibujo, para que `aligerar.py` no los saque de la fue
 
 ## Pendiente
 
-- Datos de contacto reales: Instagram y LinkedIn (marcados con `<!-- CONTACTO -->` en cada página). El WhatsApp ya es el de Juan Diego y el correo es admin@creax.net.pe (desde el 01/10/2026).
+- Canales de contacto: WhatsApp y llamada al número de Juan Diego, admin@creax.net.pe e Instagram @creax_pe (desde el 06/10/2026), en la lista `CANALES` de `animacion.js`. Solo van canales que existen.
 - Quitar el `noindex` cuando se publique como web oficial, con el dominio propio.
 
 ## Cómo se trabaja
@@ -50,14 +50,14 @@ contraseñas. El repositorio es público: todo lo que se sube, se ve.
 
 - **Secretos:** ninguna clave, token ni contraseña va en este repositorio. El `.gitignore`
   bloquea `.env`, `*.key`, `*.pem` y `*-token.txt`.
-- **Política de seguridad de contenido (CSP)** en el `<head>` de las cinco páginas:
+- **Política de seguridad de contenido (CSP)** en el `<head>` de las ocho páginas:
   - solo se cargan archivos del propio sitio;
   - no corren scripts escritos dentro del HTML: todo el JavaScript va en `inicio.js`
     (lo primero, en el `<head>`) o en `animacion.js`;
   - no se permiten iframes ni plugins, y los formularios no se envían solos (`form-action 'none'`): el de
     correo lo manda `animacion.js` con `fetch` a `contacto.php`, del mismo sitio (`connect-src 'self'`).
 - **Si algún día se carga algo de afuera** (fuentes, un video, un formulario), hay que
-  agregar ese dominio a la CSP de las cinco páginas. Si no, no carga.
+  agregar ese dominio a la CSP de las ocho páginas. Si no, no carga.
 - **Contenido dinámico:** se arma con elementos del DOM y `textContent`, nunca con
   `innerHTML` y datos.
 - **Almacenamiento en el navegador:** `creax-intro` en `sessionStorage`, para no repetir la
@@ -85,7 +85,7 @@ contraseñas. El repositorio es público: todo lo que se sube, se ve.
 - **Velocidad:** las fuentes van en WOFF2 y solo con los caracteres del español, y los íconos, solo los
   que se usan. **Si se agrega un ícono nuevo, correr `python aligerar.py`** (si no, no se ve).
 - **Publicar en creax.net.pe (Hostinger, desde el 01/10/2026):** `python preparar-hostinger.py` arma la
-  carpeta `CreaX/Subir a Hostinger - creax.net.pe/`, con solo lo que la web usa (sin scripts, README,
+  ZIP `Web/Subir a Hostinger - creax.net.pe.zip`, con solo lo que la web usa (sin scripts, README,
   `node_modules`, fuentes TTF ni la hoja completa de íconos). Solo en esa copia:
   - quita el `noindex` de las páginas (los ejemplos y la 404 lo conservan);
   - cambia la dirección de GitHub por `https://creax.net.pe/` en Open Graph, `sitemap.xml` y `robots.txt`,
@@ -100,8 +100,8 @@ contraseñas. El repositorio es público: todo lo que se sube, se ve.
   comprimidos. Si queda un `default.php` de Hostinger en `public_html`, se borra. Esa carpeta no se
   edita a mano: si cambia la web, se vuelve a correr el script y se sube de nuevo. Este repositorio sigue
   siendo el borrador de GitHub Pages, con su `noindex`, para revisar cambios antes de subirlos.
-- **Analítica:** pendiente de elegir proveedor. Si usa cookies, se carga solo cuando la persona acepta
-  en el aviso (`creax-cookies` = `todas`), y hay que sumar su dominio a la CSP.
+- **Analítica (06/10/2026):** Google Analytics `G-ZTXN7YNMRZ`. Se carga solo cuando la persona acepta en el aviso
+  (`creax-cookies` = `todas`); sus dominios ya están en la CSP. Eventos: `contacto` y `generate_lead`.
 
 ## Formulario de correo y cambio de página (01/10/2026)
 
